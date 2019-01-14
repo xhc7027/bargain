@@ -1,0 +1,32 @@
+language: php
+
+sudo: true
+
+addons:
+  apt:
+    sources:
+    - sourceline: 'deb http://packages.erlang-solutions.com/ubuntu precise contrib'
+
+cache:
+  directories:
+    - ./travisci/tmp
+    - $HOME/.composer/cache
+
+php:
+  - "7.0"
+  - "5.6"
+  - "5.5"
+  
+jdk:
+  - oraclejdk7
+  
+before_script:
+  - sudo apt-get update
+  - sudo apt-get install -y --force-yes --no-install-recommends erlang
+  - phpenv config-rm xdebug.ini; true
+  - ./travisci/bin/ci/setup.sh
+  - composer install
+  
+after_script:
+  - ./travisci/bin/ci/stop.sh
+  - erl -eval 'erlang:display(erlang:system_info(otp_release)), halt().'  -noshell

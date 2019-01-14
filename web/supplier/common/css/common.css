@@ -1,0 +1,938 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 0.14rem;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 625% !important;
+}
+
+body {
+    font-family: microsoft yahei;
+    background-color: #F2F2F2 !important;
+}
+
+template {
+    display: none;
+}
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+button,
+input,
+textarea {
+    outline: none;
+    font-family: 'Helvetica Neue,Helvetica,PingFang SC,Hiragino Sans GB,Microsoft YaHei,SimSun,sans-serif';
+}
+
+button {
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+}
+
+img {
+    display: block;
+    border: none;
+}
+
+.clear:after {
+    display: block;
+    clear: both;
+    content: "";
+    visibility: hidden;
+    height: 0;
+}
+
+
+/*基本功能背景颜色*/
+
+#conter {
+    margin: 0;
+    background-color: #F2F2F2!important;
+}
+
+
+/*基本功能自定义回复气泡*/
+
+.qipao div.speech.right {
+    padding-right: 0.3rem
+}
+
+
+/*修改公共的宽度*/
+
+.right-con {
+    width: 10rem;
+    margin: 0;
+    height: auto!important;
+    border-radius: 0.04rem;
+    padding-bottom: 50px
+}
+
+.inline-title {
+    margin: 0;
+    border-top-left-radius: 0.04rem;
+    border-top-right-radius: 0.04rem
+}
+
+
+/*微砍价背景颜色*/
+
+#rightdiv {
+    background: #F2F2F2
+}
+
+
+/*修改表格图片得display*/
+
+.table img {
+    display: inline-block
+}
+
+
+/* layout S */
+
+.v-layout {
+    padding-bottom: 20px;
+}
+
+.v-layout .layout-main {
+    display: flex;
+    justify-content: center;
+    margin: 20px auto;
+    font-size: 0;
+}
+
+.v-layout .layout-main>.content {
+    display: inline-block;
+    width: 1000px;
+    margin-left: 15px;
+}
+
+
+/* layout-header S */
+
+.layout-header {
+    width: 100%;
+    font-size: 14px;
+    background-color: #ff981a;
+}
+
+.layout-header .content {
+    position: relative;
+    width: 1200px;
+    height: 54px;
+    margin: 0 auto;
+}
+
+.layout-header .content .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.layout-header .content .logo .name {
+    height: 15px;
+    margin-left: 10px;
+    padding-left: 10px;
+    line-height: 15px;
+    color: #fff;
+    border-left: 2px solid #fff;
+}
+
+.layout-header .content .layout-user-items {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+.layout-header .content .layout-user-items .item {
+    display: inline-block;
+    position: relative;
+    padding: 0 15px;
+    line-height: 54px;
+}
+
+.layout-header .content .layout-user-items .item:after {
+    content: '';
+    position: absolute;
+    top: 22px;
+    right: 0;
+    width: 2px;
+    height: 10px;
+    background: #fff;
+}
+
+.layout-header .content .layout-user-items .item:last-child:after {
+    display: none;
+}
+
+.layout-header .content .layout-user-items .item a {
+    color: #fff;
+}
+
+
+/* coupon S */
+
+.layout-header .content .layout-user-items .item.no-read:before {
+    content: "";
+    position: absolute;
+    top: 24px;
+    right: 6px;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: red;
+}
+
+.layout-header .content .layout-user-items .item.coupon-link:hover .user-coupon-list {
+    display: block;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list {
+    display: none;
+    position: absolute;
+    top: 54px;
+    left: -193px;
+    padding: 10px 20px;
+    height: 310px;
+    text-align: center;
+    line-height: 1;
+    font-size: 14px;
+    background: #fafafa;
+    border-radius: 5px;
+    border-bottom: 5px solid #ff8066;
+    z-index: 100;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list .no-data:before {
+    content: "";
+    display: inline-block;
+    width: 156px;
+    height: 93px;
+    margin: 45px auto 20px auto;
+    background: url('http://static-10006892.file.myqcloud.com/public/img/coupon-icon-2-min.png') -15px -133px no-repeat;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list .no-data .tips .title {
+    color: #ff981a;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list .no-data .tips .text {
+    margin: 5px 0 10px 0;
+    color: #666;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list .no-data .tips .text .color-orange {
+    color: #ff981a;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list .no-data .tips a {
+    color: #ff981a;
+    text-decoration: underline;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list .coupon-list {
+    background: #fff;
+}
+
+.coupon-list .coupon-list-item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    margin: 0 0 4px 0;
+    border-radius: 3px;
+}
+
+.coupon-list .coupon-list-item .coupon-item-info-wrap {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    background-color: #00a2d4;
+    background: url("http://static-10006892.file.myqcloud.com/public/img/coupon-icon-2-min.png") -15px -15px no-repeat;
+    text-align: left;
+}
+
+.coupon-list .coupon-list-item .coupon-item-info {
+    position: relative;
+    width: 176px;
+    padding: 0 10px;
+    margin: 5px 7px;
+    border-radius: 3px;
+    background-color: #ffeeeb;
+}
+
+.coupon-list-item .coupon-size {
+    position: relative;
+    color: #ff8066;
+}
+
+.coupon-list-item .coupon-size .size-number {
+    padding-left: 13px;
+    font-size: 32px;
+    font-family: Impact;
+    line-height: 37px;
+}
+
+.coupon-list-item .coupon-size:after {
+    content: '￥';
+    position: absolute;
+    bottom: 3px;
+    left: 0;
+    font-size: 14px;
+}
+
+.coupon-list-item .size-type {
+    position: absolute;
+    bottom: 5px;
+    left: 66px;
+    font-size: 16px;
+}
+
+.coupon-list-item .coupone-date {
+    padding: 4px 0;
+    border-top: 1px dashed #ffbeb1;
+}
+
+.coupon-list-item .coupone-date-text {
+    margin: 0;
+    font-size: 12px;
+    line-height: 15px;
+    color: #666;
+}
+
+.coupon-list-item .coupone-date-text:first-child {
+    margin-bottom: 2px;
+}
+
+.coupon-list-item .coupone-date-text .strong {
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.coupon-list-item .coupone-date-tips {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    width: 22px;
+    height: 60px;
+    line-height: 14px;
+    padding-top: 2px;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    background-color: #738fe6;
+    border-radius: 3px;
+}
+
+.coupon-list-item .coupon-item-status {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    width: 45px;
+    height: 88px;
+    padding: 20px 8px 0;
+    line-height: 16px;
+    font-size: 14px;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #ff957f;
+    cursor: pointer;
+}
+
+.coupon-list-item .coupon-item-status:hover {
+    color: #fff;
+}
+
+.coupon-list-item .coupon-item-status:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -1px;
+    width: 46px;
+    height: 100%;
+    background: url("http://static-10006892.file.myqcloud.com/public/img/coupon-icon.png") -186px -133px no-repeat;
+}
+
+.coupon-list-item .coupon-item-status:before {
+    content: '';
+    position: absolute;
+    top: 57px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    background: url("http://static-10006892.file.myqcloud.com/public/img/coupon-icon.png") -0 -241px no-repeat;
+}
+
+.layout-header .content .layout-user-items .item:hover .user-coupon-list {
+    display: block;
+}
+
+
+/* coupon E */
+
+.layout-header .content .layout-user-items .item.sign-out:after {
+    display: none;
+}
+
+
+/* layout-header E */
+
+
+/* layout-nav S */
+
+.layout-nav {
+    display: inline-block;
+    width: 180px;
+    vertical-align: top;
+}
+
+.layout-nav .fix-wrap {
+    display: inline-block;
+    width: 180px;
+}
+
+.layout-nav .fix-wrap.fixed {
+    position: fixed;
+    top: 0;
+    z-index: 100;
+}
+
+.layout-nav .fix-wrap .items {
+    padding: 20px 0;
+    font-size: 0;
+    border-top: 10px solid #ff981a;
+    border-bottom: 10px solid #ff981a;
+    border-radius: 4px;
+    background: #fff;
+}
+
+.layout-nav .fix-wrap .items .item {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.layout-nav .fix-wrap .items .item:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 10px;
+    width: 160px;
+    height: 1px;
+    background: #f2f2f2;
+}
+
+.layout-nav .fix-wrap .items .item:first-child:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 10px;
+    width: 160px;
+    height: 1px;
+    background: #f2f2f2;
+}
+
+.layout-nav .fix-wrap .items .item .link {
+    position: relative;
+    display: flex;
+    height: 50px;
+    align-items: center;
+    font-size: 14px;
+    color: #4d4d4d;
+}
+
+.layout-nav .fix-wrap .items .item .link:hover {
+    color: #ff981a;
+}
+
+.layout-nav .fix-wrap .items .item .link.active {
+    border-right: 3px solid #ff981a;
+    background: #FFF4E6;
+}
+
+.layout-nav .fix-wrap .items .item .link .name {
+    font-size: 14px;
+}
+
+.layout-nav .fix-wrap .items .item .link.active .name {
+    color: #ff981a;
+}
+
+.layout-nav .fix-wrap .items .item .link.active .icon-arrow {
+    right: 0;
+}
+
+.layout-nav .fix-wrap .items .item .link.sub-active .name {
+    color: #ff981a;
+}
+
+.layout-nav .fix-wrap .items .item .link .icon-logo {
+    width: 21px;
+    height: 21px;
+    margin: 15px 10px;
+    font-size: 21px;
+}
+
+.layout-nav .fix-wrap .items .item .link .icon-arrow {
+    position: absolute;
+    top: 0;
+    right: 3px;
+    margin: 16px 8px;
+    font-size: 18px;
+}
+
+.layout-nav .fix-wrap .items .item .link .icon-arrow:hover {
+    color: #ff981a;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items {
+    overflow: hidden;
+    transition: all .4s;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items.hide {
+    display: block;
+    max-height: 0 !important;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items .sub-item {
+    height: 40px;
+    padding-left: 40px;
+    line-height: 40px;
+    cursor: pointer;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items .sub-item.active {
+    border-right: 3px solid #ff981a;
+    background: #FFF4E6;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items .sub-item.active .sub-link {
+    color: #ff981a;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items .sub-item:hover .sub-link {
+    color: #ff981a;
+}
+
+.layout-nav .fix-wrap .items .item .sub-items .sub-item .sub-link {
+    display: inline-block;
+    width: 100%;
+    font-size: 14px;
+    color: #999;
+}
+
+.layout-nav .fix-wrap .statement {
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    text-decoration: underline;
+}
+
+.layout-nav .fix-wrap .code {
+    width: 120px;
+    height: 160px;
+    margin: 20px auto;
+}
+
+.layout-nav .fix-wrap .code img {
+    width: 100%;
+}
+
+.layout-nav .fix-wrap .code p {
+    padding: 0 16px;
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+}
+
+
+/* layout-nav E */
+
+
+/* layout-aside S */
+
+.layout-aside {
+    position: fixed;
+    right: 20px;
+    top: 270px;
+    width: 160px;
+    text-align: left;
+    transition: all .2s;
+    z-index: 10;
+}
+
+.layout-aside a,
+.layout-aside>span {
+    display: block;
+    width: 100%;
+    height: 32px;
+    margin-bottom: 5px;
+    line-height: 32px;
+    color: #fff;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.layout-aside .show-hide-aside-btn {
+    position: absolute;
+    top: -30px;
+    right: 0;
+    width: 60px;
+    height: 24px;
+    padding-left: 8px;
+    text-align: left;
+    color: #fff;
+    font-size: 12px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    background-color: #999;
+    transition: all .2s;
+}
+
+.layout-aside .hide-txt {
+    display: none;
+    font-size: 16px;
+}
+
+.layout-aside.hide-detail .hide-txt {
+    display: inline;
+}
+
+.layout-aside .show-hide-aside-btn .icon:first-child {
+    display: none;
+}
+
+.layout-aside.hide-detail .show-hide-aside-btn .icon:last-child {
+    display: none;
+}
+
+.layout-aside .show-hide-aside-btn .icon {
+    font-size: 14px;
+    vertical-align: top;
+}
+
+.layout-aside.hide-detail {
+    right: -160px;
+}
+
+.layout-aside.hide-detail .show-txt {
+    display: none;
+}
+
+.layout-aside.hide-detail .show-hide-aside-btn {
+    position: absolute;
+    top: 5px;
+    right: 180px;
+    width: 40px;
+    height: 120px;
+    padding: 0 5px;
+    text-align: center;
+    line-height: 18px;
+    color: #fff;
+    font-size: 16px;
+    background-color: #ff981a;
+    transition: all .2s;
+}
+
+.layout-aside.hide-detail .show-hide-aside-btn .icon {
+    display: inline-block;
+    margin-bottom: 6px;
+    font-size: 23px;
+}
+
+.layout-aside.hide-detail .show-hide-aside-btn:after {
+    display: none;
+}
+
+.layout-aside .contact-qq {
+    background: #ffb319;
+    transition: all .2s;
+}
+
+.layout-aside .contact-qq .icon {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 2px;
+    vertical-align: top;
+    font-size: 18px;
+}
+
+.layout-aside .contact {
+    background: #f73;
+    transition: all .2s;
+}
+
+.layout-aside .contact .icon {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 2px;
+    vertical-align: top;
+    font-size: 18px;
+}
+
+.layout-aside .qq-group {
+    position: relative;
+    background: #39f;
+}
+
+.layout-aside .qq-group .icon {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 2px;
+    vertical-align: top;
+    font-size: 18px;
+}
+
+.layout-aside .qq-group p {
+    display: none;
+}
+
+.layout-aside .qq-group p:before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 50%;
+    right: -16px;
+    border-width: 8px;
+    border-style: solid;
+    border-color: transparent transparent transparent rgba(0, 0, 0, 0.6);
+    transform: translateY(-50%);
+}
+
+.layout-aside .qq-group:hover p {
+    display: inline-block;
+    position: absolute;
+    width: 220px;
+    line-height: 20px;
+    left: -230px;
+    top: 50%;
+    padding: 10px 10px 12px 10px;
+    font-size: 14px;
+    color: #fff;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 5px;
+    text-align: left;
+    transform: translateY(-50%);
+}
+
+.layout-aside .tel {
+    background: #5ca1e6;
+}
+
+.layout-aside .tel .icon {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 2px;
+    vertical-align: top;
+    font-size: 18px;
+}
+
+
+/* layout-aside E */
+
+
+/* 弹窗组件 S */
+
+.dialog {
+    display: table;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    -webkit-transition: opacity .2s ease;
+    transition: opacity .2s ease;
+}
+
+.dialog .dialog-wrap {
+    display: table-cell;
+    vertical-align: middle;
+    -webkit-transition: all .2s ease;
+    transition: all .2s ease;
+}
+
+.dialog .dialog-wrap .dialog-container {
+    position: relative;
+    width: 3.6rem;
+    margin: 0 auto;
+    background-color: #FFF;
+    border-radius: 0.05rem;
+}
+
+.dialog .dialog-wrap .dialog-container i.close-dialog-btn {
+    position: absolute;
+    top: 0.14rem;
+    right: 0.15rem;
+    width: 0.12rem;
+    height: 0.12rem;
+    background-image: url("http://static-10006892.file.myqcloud.com/public/img/icon-common-161101.png");
+    background-position: -44px -61px;
+    cursor: pointer;
+}
+
+.dialog .dialog-wrap .dialog-container i.close-dialog-btn:hover {
+    background-position: 0px -61px;
+}
+
+.dialog .dialog-wrap .dialog-container p.dialog-title {
+    width: 100%;
+    height: 0.4rem;
+    padding: 0.1rem 0.2rem;
+    color: #1A1A1A;
+    border-bottom: 0.01rem solid #E6E6E6;
+    background-color: #F8F8F8;
+    border-top-left-radius: 0.05rem;
+    border-top-right-radius: 0.05rem;
+}
+
+.dialog .dialog-wrap .dialog-container div.dialog-content {
+    padding: 0.2rem;
+    min-height: 1rem;
+}
+
+.dialog .dialog-wrap .dialog-container div.btn-content {
+    padding: 0 0.2rem 0.2rem 0.2rem;
+    text-align: right;
+}
+
+.dialog .dialog-wrap .dialog-container div.btn-content button {
+    margin-left: 0.1rem;
+    width: 0.8rem;
+    height: 0.36rem;
+    color: #FFF;
+    border: 0.01rem solid #FF981A;
+    background-color: #FF981A;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+    border-radius: 0.03rem;
+}
+
+.dialog .dialog-wrap .dialog-container div.btn-content button.cancel {
+    color: #999;
+    border: 0.01rem solid #CCC;
+    background-color: #FFF;
+}
+
+.dialog .dialog-wrap .dialog-container div.btn-content button:hover {
+    color: #FFF;
+    border: 0.01rem solid #FF8800;
+    background-color: #FF8800;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.dialog .dialog-wrap .dialog-container div.btn-content.btn-1 {
+    text-align: center;
+}
+
+.dialog .dialog-wrap .dialog-container div.btn-content.btn-1 button {
+    width: 2rem;
+    height: 0.4rem;
+    margin: 0;
+}
+
+.dialog-enter {
+    opacity: 0;
+}
+
+.dialog-enter .dialog-wrap {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+.dialog-leave {
+    opacity: 0;
+}
+
+.dialog-leave .dialog-wrap {
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+}
+
+
+/* 弹窗组件 E */
+
+
+/* 页面内容区 S */
+
+#main-wrap {
+    display: inline-block;
+    margin-left: 0.15rem;
+    vertical-align: top;
+}
+
+
+/* 页面内容区 E */
+
+
+/* 隐藏Vue.js编译之前的元素 */
+
+[v-cloak] {
+    display: none;
+}
+
+
+/* 兼容项目 */
+
+.layout-nav .link {
+    float: none;
+    background-image: none;
+}
+
+.layout-main .icon {
+    background: none;
+}
+
+.layout-aside .icon {
+    background: none;
+}
+
+#cnzz_stat_icon_4295023 {
+    display: none;
+}
+
+.layout-aside .tel-number {
+    font-size: 16px;
+}
+
+.layout-header .content {
+    padding: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.layout-header .content .layout-user-items .item .user-coupon-list {
+    width: 275px;
+    z-index: 2000;
+}

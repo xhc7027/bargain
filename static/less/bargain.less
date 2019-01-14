@@ -1,0 +1,1058 @@
+@color-yellow: #FFD500;
+@color-brown: #582402;
+@color-red: #F34848;
+@img: 'http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png';
+
+// 带有虚线上边框
+.dashed-border() {
+    position: relative;
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px 10px;
+    border-top: 1px dashed @color-brown;
+
+    &:before,
+    &:after {
+        position: absolute;
+        top: -3px;
+        content: "";
+        width: 3px;
+        height: 3px;
+        border: 1px solid @color-brown;
+        border-radius: 50%;
+    }
+    &:before {left: -4px;}
+    &:after {right: -4px;}
+}
+
+// 带有背景图片
+.background-img(@size: cover, @pos-x: 0, @pos-y: 0) {
+    background: url("@{img}") no-repeat transparent @pos-x @pos-y;
+    background-size: @size auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: @color-red;
+
+    * {box-sizing: border-box;}
+
+    p {margin: 0;}
+
+    button {
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        -webkit-tap-highlight-color: transparent;
+    }
+
+    // 隐藏vue模版语言{{}}
+    [v-cloak] {display: none;}
+
+    // 首屏画面
+    .loading-text {display: none;}
+    &.loading {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        &:before {
+            content: "";
+            position: absolute;
+            left: -10vw;
+            top: 10vh;
+            width: 30vw;
+            height: 30vw;
+            border-radius: 10px;
+            background-color: @color-yellow;
+            transform: rotate(45deg);
+            z-index: 12;
+        }
+
+        &:after {
+            content: "";
+            position: absolute;
+            right: 7vw;
+            top: 45vh;
+            width: 5vw;
+            height: 5vw;
+            border-radius: 5px;
+            background-color: @color-yellow;
+            transform: rotate(45deg);
+            z-index: 12;
+        }
+
+        .loading-text {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding-top: 30vh;
+            font-size: 40px;
+            font-weight: bold;
+            color: @color-yellow;
+            text-align: center;
+            background-color: @color-red;
+            z-index: 11;
+
+            &:after {
+                display: block;
+                content: "拼命加载中...";
+                color: #FFF;
+                font-size: 14px;
+                font-weight: normal;
+            }
+        }
+    }
+}
+
+// 头部
+header {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    border-bottom: 2px solid @color-yellow;
+
+    &:after {
+        position: absolute;
+        bottom: 10px;
+        right: 10px;
+        display: block;
+        content: "";
+        width: 15px;
+        height: 15px;
+        background-color: @color-yellow;
+        border-radius: 5px;
+        transform: rotate(45deg);
+    }
+
+    // 左侧正方形图标
+    .left {
+        position: relative;
+        top: -20px;
+        left: -12px;
+        width: 40px;
+        height: 40px;
+        background-color: @color-yellow;
+        border-radius: 5px;
+        transform: rotate(45deg);
+
+        &:after {
+            position: absolute;
+            top: 15px;
+            left: 50px;
+            display: block;
+            content: "";
+            width: 15px;
+            height: 15px;
+            background-color: #BBD755;
+            border-radius: 5px;
+            transform: rotate(45deg);
+        }
+    }
+
+    // 微信信息
+    .wx-msg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // 头像
+        .avator {
+            width: 50px;
+            height: 50px;
+            border: 1px solid @color-yellow;
+            border-radius: 50%;
+        }
+        // 昵称
+        .nickname {
+            margin-left: 5px;
+            color: @color-yellow;
+            font-size: 20px;
+
+            &.not-self:after {
+                display: block;
+                content: "邀请您帮ta砍价";
+                color: #FFF;
+                font-size: 16px;
+            }
+        }
+    }
+
+    // 活动说明按钮
+    .act-explain-btn {
+        width: 71px;
+        height: 25px;
+        .background-img(525px, -383px, -105px);
+        z-index: 1;
+
+        &:active {
+            background-position: -383px -135px;
+        }
+    }
+}
+// 图片小尾巴广告
+#idouzi-ad{
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+}
+
+#empty{
+    height: 10vw;
+    background: none;
+}
+
+.main {
+    // 轮播图模块
+    .swipe {
+        position: relative;
+
+        // 图片轮播
+        .swipe-wrap {
+            display: block;
+            width: 100%;
+            height: 53vw;
+            border-bottom: 3px solid @color-yellow;
+
+            .goods-swiper {
+                position: relative;
+                width: 100%;
+                height: 100%;
+                overflow: hidden;
+
+                .swiper-wrapper {
+                    display: flex;
+                    width: 100%;
+                    height: 100%;
+
+                    .swiper-slide {
+                        display: flex;
+                        height: 100%;
+                        flex-shrink: 0;
+
+                        .slide-img {
+                            width: 100%;
+                            height: 100%;
+                        }
+                    }
+                }
+            }
+
+            .swiper-pagination {
+                position: absolute;
+                bottom: 20px;
+                left: 0;
+                width: 100%;
+                text-align: center;
+
+                .swiper-pagination-bullet {
+                    display: inline-block;
+                    margin: 0 5px;
+                    width: 8px;
+                    height: 8px;
+                    background-color: #FFF;
+                    border-radius: 50%;
+                    transition: all .3s;
+
+                    &.swiper-pagination-bullet-active {
+                        background-color: @color-yellow;
+                        transition: all .3s;
+                    }
+                }
+            }
+        }
+
+        // 时间
+        .time-wrap {
+            position: absolute;
+            bottom: -15px;
+            width: 100%;
+            text-align: center;
+            .time {
+                display: inline-block;
+                width: 200px;
+                padding: 5px 0;
+                color: @color-brown;
+                font-size: 14px;
+                background-color: #FFF;
+                border: 2px solid @color-brown;
+                border-radius: 6px;
+
+                .icon-clock {
+                    display: inline-block;
+                    margin: 4px 3px 0;
+                    width: 14px;
+                    height: 14px;
+                    .background-img(500px, -473px, -78px);
+                    vertical-align: top;
+                }
+            }
+        }
+    }
+
+    // 价格与进度条
+    .price-progress {
+        display: flex;
+        justify-content: space-around;
+        padding-top: 60px;
+
+        // 两边价格
+        .price-item {
+            flex: 1;
+            font-size: 20px;
+            color: @color-yellow;
+            text-align: center;
+
+            &:before {
+                display: inline-block;
+                content: "￥";
+            }
+            &:after {
+                display: block;
+                font-size: 14px;
+                color: #FFF;
+                text-align: center;
+            }
+
+            &.original-price:after {content: "原价";}
+            &.lowest-price:after {content: "最低价";}
+        }
+
+        // 进度条
+        .progress {
+            width: 60%;
+            display: flex;
+            align-items: center;
+            .out-bar {
+                position: relative;
+                width: 100%;
+                height: 16px;
+                background-color: #FFF;
+                border: 2px solid @color-brown;
+                border-radius: 10px;
+
+                .cur-progress {
+                    position: absolute;
+                    left: 0;
+                    width: 0;
+                    height: 100%;
+                    background-color: #8FC31F;
+                    background-image: linear-gradient(45deg, rgba(255,255,255,.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,.15) 50%, rgba(255,255,255,.15) 75%, transparent 75%, transparent);
+                    background-size: 10px 10px;
+                    border-radius: 10px;
+                    transition: all 1s;
+                }
+
+                .cur-price {
+                    display: table;
+                    position: absolute;
+                    top: -45px;
+                    padding: 2px 8px;
+                    color: #FFF;
+                    background-color: #333;
+                    border-radius: 3px;
+                    transition: all 1s;
+
+                    &:before {
+                        content: "已砍";
+                    }
+
+                    &:after {
+                        content: "";
+                        position: absolute;
+                        left: 45%;
+                        bottom: -4px;
+                        width: 10px;
+                        height: 10px;
+                        background-color: #333;
+                        border-radius: 10px 0 2px;
+                        transform: rotate(45deg);
+                    }
+
+                    &.is-lowest {
+                        left: 50%;
+                        margin-left: -51px;
+
+                        &:before {
+                            content: "已砍至最低";
+                        }
+                    }
+
+                    .price-num {
+                        color: @color-yellow;
+                        font-size: 18px;
+
+                        &:before {
+                            content: "￥";
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 商品名
+    .goods-name {
+        margin: 5px 0 0 0;
+        font-size: 20px;
+        color: #FFF;
+        text-align: center;
+
+        .stock {
+            color: @color-brown;
+            font-size: 16px;
+        }
+    }
+
+    // 按钮区域
+    .btn-wrap {
+        position: relative;
+        margin-top: 20px;
+        text-align: center;
+
+        .btn {
+            width: 182px;
+            height: 46px;
+            padding: 5px 0 0;
+            text-align: center;
+            .background-img(520px);
+            
+            &:after {
+                display: inline-block;
+                content: "";
+                height: 19px;
+            }
+
+            // 我要参加
+            &.btn-join:after {
+                width: 71px;
+                .background-img(510px, -373px, -272px);
+            }
+
+            // 自己砍一刀
+            &.btn-bargain-self:after {
+                width: 82px;
+                .background-img(485px, -354px, -173px);
+            }
+
+            // 立即购买
+            &.btn-buy:after {
+                width: 71px;
+                .background-img(510px, -372px, -205px);
+            }
+
+            // 领取商品
+            &.btn-get:after {
+                width: 71px;
+                .background-img(510px, -372px, -227px);
+            }
+
+            // 查看我的小宝贝
+            &.btn-check:after {
+                width: 126px;
+                .background-img(510px, -372px, -34px);
+            }
+
+            // 已领奖
+            &.btn-got:after {
+                width: 53px;
+                .background-img(510px, -447px, -205px);
+            }
+
+            &:active {
+                background-position: 0 -102px;
+            }
+            &:disabled {
+                background-position: 0 -51px;
+            }
+
+            // 帮砍一刀与我也要抢
+            &.btn-sm {
+                width: 140px;
+                margin: 0 5px;
+
+                // 帮砍一刀
+                &.btn-bargain {
+                    .background-img(510px, -144px, -294px);
+
+                    &:after {
+                        width: 70px;
+                        .background-img(510px, -373px, -317px);
+                    }
+
+                    &:active {
+                        background-position: 0 -244px;
+                    }
+                }
+
+                // 我也要抢
+                &.btn-join2 {
+                    .background-img(510px, 0, -294px);
+
+                    &:after {
+                        width: 71px;
+                        .background-img(510px, -373px, -250px);
+                    }
+
+                    &:active {
+                        background-position: -144px -244px;
+                    }
+
+                    &:disabled {
+                        background-position: -185px -196px;
+                    }
+                }
+            }
+        }
+
+        &:after {
+            display: none;
+            position: absolute;
+            top: -20px;
+            right: 20px;
+            content: "";
+            width: 86px;
+            height: 81px;
+            .background-img(525px, -288px, -98px);
+            border-radius: 50%;
+        }
+        &.is-lowest {
+            &:after {
+                display: block;
+            }
+        }
+    }
+
+    // 参与人数与活动店铺
+    .participation-num-store {
+        .participation-num,
+        .share-tips {
+            margin-top: 5px;
+            color: @color-brown;
+            font-size: 14px;
+            text-align: center;
+
+            &.notice {
+                font-size: 16px;
+                font-weight: bold;
+                color: @color-yellow;
+            }
+        }
+        
+        .act-store {
+            margin: 20px 0 0 0;
+            color: @color-brown;
+            font-size: 14px;
+            text-align: center;
+            &:before {
+                display: inline-block;
+                content: "";
+                margin-right: 5px;
+                width: 19px;
+                height: 17px;
+                .background-img(520px, -492px, -58px);
+                vertical-align: top;
+            }
+        }
+    }
+
+    // 贡献列表
+    .helper-wrap {
+        .dashed-border;
+        margin-top: 30px;
+        padding-top: 55px;
+
+        .helper-container {
+            position: relative;
+            background-color: @color-yellow;
+            border: 1px solid @color-brown;
+            border-radius: 5px;
+
+            &:before {
+                content: "";
+                position: absolute;
+                top: -15px;
+                left: 50%;
+                margin-left: -70px;
+                width: 140px;
+                height: 30px;
+                .background-img(514px, -375px, 0);
+            }
+
+            .helper-list {
+                position: relative;
+                max-height: 365px;
+                margin: 20px 10px 10px;
+                overflow: hidden;
+
+                .helper-ul {
+                    margin: 0;
+                    padding: 0;
+
+                    &:after {
+                        display: block;
+                        color: #FFF;
+                        font-size: 14px;
+                        text-align: center;
+                    }
+                    // 加载中
+                    &.loading:after {content: "加载中...";}
+
+                    // 无更多数据
+                    &.is-last:after {content: "无更多数据";}
+
+                    .helper-item {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        list-style-type: none;
+                        border-top: 1px solid @color-brown;
+                        padding: 10px 0;
+                        &:first-child {border-top: none;}
+
+                        .helper-msg {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+
+                            .helper-avator {
+                                display: inline-block;
+                                width: 40px;
+                                height: 40px;
+                                background-color: blue;
+                                border: 1px solid #FFF;
+                                border-radius: 50%;
+                            }
+
+                            .helper-text {
+                                padding-left: 5px;
+                                .helper-time {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+
+                        .bargain-price {
+                            color: #F24949;
+                            font-size: 20px;
+
+                            &:before {
+                                content: "-￥";
+                                white-space: nowrap;
+                            }
+                            &.add {
+                                color: #62B311;
+                                
+                                &:before {
+                                    content: "+￥";
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .swiper-scrollbar {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 5px;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, .1);
+                    border-radius: 10px;
+                    z-index: 3;
+
+                    .swiper-scrollbar-drag {
+                        width: 100%;
+                        background-color: rgba(0, 0, 0, .3);
+                        border-radius: 10px;
+                    }
+                }
+
+                .helper-empty {
+                    padding: 10px 0;
+                    text-align: center;
+
+                    &:before {
+                        content: "·砍价第一好汉·";
+                        font-weight: bold;
+                    }
+                    &:after {
+                        display: block;
+                        margin-top: 5px;
+                        content: "招募中...";
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    margin-top: 20px;
+    padding-bottom: 50px;
+    border-bottom: 20px solid @color-yellow;
+
+}
+
+// 砍价效果图
+.bargaining {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+// 提示框
+.tips {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+
+    .tips-text {
+        max-width: 70%;
+        padding: 10px 15px;
+        color: #FFF;
+        font-size: 14px;
+        text-align: center;
+        border-radius: 4px;
+        background-color: rgba(0, 0, 0, .8);
+    }
+}
+
+// 模态弹窗样式 S
+// 公共样式
+.modal-mask {
+    display: flex;
+    position: fixed;
+    z-index: 9;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, .6);
+    transition: opacity .3s ease;
+
+    .modal-wrapper {
+        position: relative;
+        width: 85%;
+        padding: 40px 10px;
+        text-align: center;
+        background-color: #FFF9D9;
+        border: 2px solid @color-yellow;
+        border-radius: 10px;
+        transition: all .3s ease;
+
+        .modal-title {
+            position: absolute;
+            top: -22px;
+            left: 50%;
+            width: 180px;
+            height: 40px;
+            margin-left: -90px;
+            padding-top: 10px;
+            background-color: #F24949;
+            border: 1px solid @color-yellow;
+            border-radius: 10px;
+
+            &:before {
+                content: "";
+                display: inline-block;
+                height: 18px;
+                .background-img(510px);
+            }
+        }
+
+        .modal-btn {
+            position: absolute;
+            bottom: -23px;
+            left: 50%;
+            width: 182px;
+            height: 46px;
+            margin-left: -91px;
+            padding: 5px 0 0;
+            text-align: center;
+            .background-img(520px);
+
+            &:after {
+                display: inline-block;
+                content: "";
+                height: 18px;
+            }
+
+            &:active {
+                background-position: 0 -102px;
+            }
+            &:disabled {
+                background-position: 0 -51px;
+            }
+        }
+    }
+
+    &.modal-enter,
+    &.modal-leave-active {
+        opacity: 0;
+        .modal-wrapper {
+            transform: scale(1.1);
+        }
+    }
+}
+
+/*底部二维码*/
+.footer {
+    @colors: #FFD500;
+    margin: 15px auto 0;
+    color: #2a2a2a;
+    text-align: center;
+    
+    .code {
+        box-sizing: border-box;
+        background: @colors;
+        width: 60%;
+        margin: 10px auto 20px;
+        border: 2px solid #592500;
+        border-radius: 10px;
+        text-align: center;
+        padding: 10px;
+        
+        .qrcode-url {
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: auto;
+        }
+    }
+}
+
+// 活动说明
+.explain-container {
+    .modal-wrapper {
+        padding: 40px 25px;
+        .modal-title:before {
+            width: 71px;
+            .background-img(510px, -371px, -295px);
+        }
+
+        .modal-container {
+            .swiper-container {
+                position: relative;
+                max-height: 55vh;
+                overflow: hidden;
+
+                .content {
+                    text-align: left;
+                    img {
+                        max-width: 100%;
+                    }
+
+                    * {
+                        white-space: normal !important;
+                        word-wrap: break-word !important;
+                        word-break: break-all !important;
+                    }
+                }
+
+                .swiper-scrollbar {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 5px;
+                    height: 100%;
+                    background-color: rgba(0, 0, 0, .1);
+                    border-radius: 10px;
+                    z-index: 3;
+
+                    .swiper-scrollbar-drag {
+                        width: 100%;
+                        background-color: rgba(0, 0, 0, .3);
+                        border-radius: 10px;
+                    }
+                }
+            }
+
+        }
+
+        .modal-btn:after {
+            width: 53px;
+            .background-img(510px, -447px, -228px);
+        } 
+    }
+}
+
+// 填写信息
+.form-container {
+    .modal-wrapper {
+        .modal-title:before {
+            width: 108px;
+            .background-img(510px, -371px, -79px);
+        }
+
+        .modal-container {
+            .label-item {
+                display: block;
+
+                .input-item {
+                    width: 60%;
+                    height: 34px;
+                    margin: 0 0 10px 10px;
+                    padding: 0 5px;
+                    border-width: 1px;
+                    border-style: solid;
+                    border-color: #979797;
+                    border-radius: 5px;
+                    -webkit-appearance: none;
+                    -webkit-tap-highlight-color: transparent;
+
+                    &:focus,
+                    &:active {
+                        border-color: @color-yellow;
+                    }
+                }
+            }
+        }
+
+        .modal-btn:after {
+            width: 36px;
+            .background-img(510px, -463px, -183px);
+        } 
+    }
+}
+
+// 表情弹窗
+.emoji-modal {
+    .modal-title {
+        top: -65px !important;
+        margin-left: -45px !important;
+        padding-top: 0 !important;
+        width: 90px !important;
+        height: 92px !important;
+        background-color: transparent !important;
+        border: none !important;
+        border-radius: 0 !important;
+
+        &:before {
+            display: none;
+        }
+    }
+
+    .modal-container {
+        font-size: 18px;
+        .price-num {
+            color: @color-red;
+        }
+    }
+}
+
+// 砍价(减)弹窗
+.bargain-sub-container {
+    .modal-title {
+        .background-img(510px, 0, -148px);
+    }
+
+    .modal-btn:after {
+        width: 54px;
+        .background-img(510px, -447px, -102px);
+    }
+}
+
+// 砍价(加)弹窗
+.bargain-add-container {
+    .modal-title {
+        .background-img(510px, -93px, -148px);
+    }
+
+    .modal-btn:after {
+        width: 108px;
+        .background-img(510px, -372px, -57px);
+    }
+}
+
+// 兑奖码弹窗
+.redeem-code-container {
+    .modal-wrapper {
+        .modal-title:before {
+            width: 54px;
+            .background-img(510px, -447px, -130px);
+        }
+
+        .modal-container {
+            padding: 15px 0;
+            font-size: 18px;
+        }
+
+        .modal-btn:after {
+            width: 36px;
+            .background-img(510px, -465px, -160px);
+        }
+    }
+}
+
+// 活动已结束弹窗
+.event-over-container {
+    .modal-title {
+        width: 94px !important;
+        .background-img(510px, -182px, 0);
+    }
+
+    .modal-container {
+        &:before {
+            content: "活动结束啦~感谢支持哦~";
+            font-size: 18px;
+        }
+
+        .modal-footer-txt {
+            font-size: 14px;
+        }
+
+        .code-container {
+            width: 60%;
+            height: 45vw;
+            margin: 10px auto 0;
+            padding: 10px;
+            background-color: @color-yellow;
+            border: 1px solid @color-brown;
+            border-radius: 10px;
+
+            .code-img {
+                width: 100%;
+                height: 100%;
+            }
+        }
+    }
+
+    .modal-btn:after {
+        width: 126px;
+        .background-img(510px, -372px, -34px);
+    }
+}
+
+// 商品被抢光弹窗
+.sold-out-container {
+    .modal-title {
+        .background-img(510px, -279px, 0);
+    }
+
+    .modal-btn:after {
+        width: 70px;
+        .background-img(510px, -372px, -160px);
+    }
+}
+// 模态弹窗样式 E

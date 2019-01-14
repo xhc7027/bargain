@@ -1,0 +1,228 @@
+/*
+Icon classes can be used entirely standalone. They are named after their original file names.
+
+Example usage in HTML:
+
+`display: block` sprite:
+<div class="icon-home"></div>
+
+To change `display` (e.g. `display: inline-block;`), we suggest using a common CSS class:
+
+// CSS
+.icon {
+  display: inline-block;
+}
+
+// HTML
+<i class="icon icon-home"></i>
+*/
+.icon-btn-act-explain-active {
+  background-image: url(sprite.png);
+  background-position: -760px -268px;
+  width: 142px;
+  height: 50px;
+}
+.icon-btn-act-explain {
+  background-image: url(sprite.png);
+  background-position: -760px -208px;
+  width: 142px;
+  height: 50px;
+}
+.icon-btn-normal-active {
+  background-image: url(sprite.png);
+  background-position: 0px -204px;
+  width: 364px;
+  height: 92px;
+}
+.icon-btn-normal-disabled {
+  background-image: url(sprite.png);
+  background-position: 0px -102px;
+  width: 364px;
+  height: 92px;
+}
+.icon-btn-normal {
+  background-image: url(sprite.png);
+  background-position: 0px 0px;
+  width: 364px;
+  height: 92px;
+}
+.icon-btn-sm-green-active {
+  background-image: url(sprite.png);
+  background-position: 0px -602px;
+  width: 284px;
+  height: 92px;
+}
+.icon-btn-sm-green {
+  background-image: url(sprite.png);
+  background-position: -294px -500px;
+  width: 284px;
+  height: 92px;
+}
+.icon-btn-sm-yellow-active {
+  background-image: url(sprite.png);
+  background-position: 0px -500px;
+  width: 284px;
+  height: 92px;
+}
+.icon-btn-sm-yellow {
+  background-image: url(sprite.png);
+  background-position: -294px -602px;
+  width: 284px;
+  height: 92px;
+}
+.icon-emoji-happy {
+  background-image: url(sprite.png);
+  background-position: 0px -306px;
+  width: 182px;
+  height: 184px;
+}
+.icon-emoji-late {
+  background-image: url(sprite.png);
+  background-position: -570px 0px;
+  width: 180px;
+  height: 184px;
+}
+.icon-emoji-over {
+  background-image: url(sprite.png);
+  background-position: -374px 0px;
+  width: 186px;
+  height: 184px;
+}
+.icon-emoji-sad {
+  background-image: url(sprite.png);
+  background-position: -192px -306px;
+  width: 180px;
+  height: 184px;
+}
+.icon-helper-list {
+  background-image: url(sprite.png);
+  background-position: -760px 0px;
+  width: 280px;
+  height: 60px;
+}
+.icon-icon-clock {
+  background-image: url(sprite.png);
+  background-position: -985px -162px;
+  width: 28px;
+  height: 28px;
+}
+.icon-icon-lowest {
+  background-image: url(sprite.png);
+  background-position: -570px -194px;
+  width: 171px;
+  height: 162px;
+}
+.icon-icon-store {
+  background-image: url(sprite.png);
+  background-position: -985px -116px;
+  width: 38px;
+  height: 34px;
+}
+.icon-text-act-explain {
+  background-image: url(sprite.png);
+  background-position: -760px -603px;
+  width: 142px;
+  height: 36px;
+}
+.icon-text-bargain-self {
+  background-image: url(sprite.png);
+  background-position: -760px -374px;
+  width: 175px;
+  height: 35px;
+}
+.icon-text-bargain {
+  background-image: url(sprite.png);
+  background-position: -760px -649px;
+  width: 141px;
+  height: 36px;
+}
+.icon-text-buy-orininal {
+  background-image: url(sprite.png);
+  background-position: -760px -328px;
+  width: 179px;
+  height: 36px;
+}
+.icon-text-buy {
+  background-image: url(sprite.png);
+  background-position: -760px -419px;
+  width: 143px;
+  height: 36px;
+}
+.icon-text-code {
+  background-image: url(sprite.png);
+  background-position: -912px -268px;
+  width: 107px;
+  height: 36px;
+}
+.icon-text-get {
+  background-image: url(sprite.png);
+  background-position: -760px -465px;
+  width: 143px;
+  height: 36px;
+}
+.icon-text-got {
+  background-image: url(sprite.png);
+  background-position: -913px -419px;
+  width: 106px;
+  height: 36px;
+}
+.icon-text-join {
+  background-image: url(sprite.png);
+  background-position: -760px -557px;
+  width: 143px;
+  height: 36px;
+}
+.icon-text-join2 {
+  background-image: url(sprite.png);
+  background-position: -760px -511px;
+  width: 143px;
+  height: 36px;
+}
+.icon-text-more {
+  background-image: url(sprite.png);
+  background-position: 0px -704px;
+  width: 345px;
+  height: 28px;
+}
+.icon-text-mygoods {
+  background-image: url(sprite.png);
+  background-position: -760px -70px;
+  width: 251px;
+  height: 36px;
+}
+.icon-text-notme {
+  background-image: url(sprite.png);
+  background-position: -760px -116px;
+  width: 215px;
+  height: 36px;
+}
+.icon-text-ok {
+  background-image: url(sprite.png);
+  background-position: -949px -328px;
+  width: 71px;
+  height: 36px;
+}
+.icon-text-saw {
+  background-image: url(sprite.png);
+  background-position: -913px -465px;
+  width: 106px;
+  height: 36px;
+}
+.icon-text-submit {
+  background-image: url(sprite.png);
+  background-position: -945px -374px;
+  width: 71px;
+  height: 35px;
+}
+.icon-text-welcome {
+  background-image: url(sprite.png);
+  background-position: -912px -208px;
+  width: 108px;
+  height: 36px;
+}
+.icon-text-write {
+  background-image: url(sprite.png);
+  background-position: -760px -162px;
+  width: 215px;
+  height: 36px;
+}

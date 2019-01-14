@@ -1,0 +1,1107 @@
+@color-orange-deep: #FF981A;
+@color-orange: #FFC44D;
+@icon-imgUrl: "http://static-10006892.file.myqcloud.com/bargain/supplier/img/bargain-icon.png";
+
+#main-wrap {
+  width: 1000px;
+}
+
+body {
+  //重置dialog样式
+  .el-dialog {
+    width: 375px;
+    top: 50%!important;
+    transform: translate(-50%,-50%);
+  }
+
+  .el-dialog__header {
+    padding: 0;
+  }
+
+  .el-dialog__body {
+    padding: 0;
+    border-radius: 5px;
+  }
+}
+
+.new-action-dialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin-top: -160px;
+  margin-left: -246px;
+  width: 456px;
+  height: 230px;
+  padding: 20px 40px;
+  font-size: 0;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, .8);
+  z-index: 2000;
+
+  .close {
+    position: absolute;
+    top: 20px;
+    right: 15px;
+    line-height: 22px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+  }
+
+  .left {
+    position: relative;
+    display: inline-block;
+    width: 160px;
+    vertical-align: top;
+    text-align: center;
+    font-size: 14px;
+    color: #FFFFFF;
+
+    .title {
+      text-align: left;
+      font-size: 14px;
+      color: #fff;
+    }
+
+    .first-qrcode {
+      margin-left: 13px;
+      margin-top: 38px;
+      width: 100px;
+      height: 100px;
+    }
+
+    .tip {
+      margin-top: 20px;
+      text-align: left;
+    }
+
+    &:after {
+      content: '';
+      position: absolute;
+      top: 48px;
+      right: 0;
+      width: 1px;
+      height: 120px;
+      background: #fff;
+    }
+  }
+  
+  .right {
+    display: inline-block;
+    width: 216px;
+    font-size: 14px;
+    color: #fff;
+
+    .title {
+      padding-left: 15px;
+      font-size: 14px;
+      color: #fff;
+    }
+    
+    .copy-wrap {
+      margin-top: 40px;
+      text-align: right;
+      
+      .copy-tip {
+        color: #CCCCCC;
+      }
+
+      .show-url {
+        width: 200px;
+        margin-top: 5px;
+        padding: 6px 10px;
+        font-size: 14px;
+        color: #191919;
+        border: 1px solid #CCCCCC;
+        border-radius: 3px;
+        background: #FFFFFF;
+      }
+
+      .copy-btn {
+        width: 80px;
+        height: 32px;
+        margin-top: 10px;
+        line-height: 32px;
+        color: #fff;
+        border-radius: 3px;
+        background: #FF981A;
+
+        &:hover {
+          background: #FF8000;
+        }
+      }
+    }
+  }
+}
+
+.new-nav-back {
+	position: relative;
+	margin-bottom: 20px;
+	line-height: 24px;
+	font-size: 20px;
+  color: #333333;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 5px;
+    height: 25px;
+    border-radius: 2px;
+    background: #FF6A4D;
+  }
+  
+  .nav-back {
+    margin-left: 15px;
+    line-height: 24px;
+    font-size: 20px;
+    color: #333333;
+  }
+}
+
+//新建活动按钮
+.add-new {
+  position: relative;
+  display: inline-block;
+  width: 120px;
+  height: 32px;
+  line-height: 32px;
+  font-size: 14px;
+  padding-left: 40px;
+  color: #fff;
+  background-color: @color-orange-deep;
+  cursor: pointer;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    width: 20px;
+    height: 20px;
+    margin-top: -10px;
+    background: url(@icon-imgUrl) -249px -15px;
+  }
+}
+
+//分页
+.page {
+  text-align: right;
+  margin-top: 10px;
+}
+
+//没数据时的样式
+.nodata {
+  width: 100%;
+  height: 600px;
+  padding-top: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  text-align: center;
+  box-shadow: 0 0 0 rgba(0, 0, 0, 0.1);
+  color: #999;
+  background-color: #fff;
+
+  .new-action-txt {
+    position: relative;
+    margin-bottom: 20px;
+    padding-left: 20px;
+    line-height: 22px;
+    text-align: left;
+    font-size: 20px;
+    color: #333333;
+
+    &:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 20px;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      background: #ff981a;
+    }
+  }
+
+  .nodata-content {
+    width: 300px;
+    margin: 25% auto 0;
+    transform: translateY(-50%);
+
+    .icon {
+      width: 80px;
+      height: 40px;
+      margin: auto;
+      background: url(@icon-imgUrl) -543px -15px;
+    }
+
+    p {
+      margin: 50px 0 20px;
+    }
+  }
+}
+
+//填写手机号弹窗样式
+.dialog-title {
+  padding-left: 20px;
+  border-bottom: 1px solid #ccc;
+  background-color: #f8f8f8;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+
+  .prompt {
+    height: 40px;
+    line-height: 40px;
+    font-size: 14px;
+    color: #1a1a1a;
+
+    span {
+      color: #999;
+    }
+  }
+
+  .dialog-close {
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    font-size: 25px;
+    text-align: center;
+    color: #999;
+    cursor: pointer;
+  }
+}
+
+.dialog-content {
+  padding: 20px 60px;
+
+  .tips {
+    margin: 12px 0;
+    color: #666;
+  }
+
+  .img-code,
+  .message-code {
+    .el-input {
+      width: auto;
+    }
+
+    input {
+      width: 130px;
+    }
+
+    .code-content {
+      float: right;
+      width: 100px;
+      height: 30px;
+      margin:3px 0 0 20px;
+    }
+  }
+
+  .img-code {
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .message-code {
+    .code-content {
+      color: #fff;
+      background-color: @color-orange;
+
+      &:hover{
+        background-color: @color-orange-deep;
+      }
+
+      &:disabled{
+        cursor: not-allowed;
+        background-color: #ccc;
+        &:hover{
+          background-color: #ccc;
+        }
+      }
+    }
+  }
+
+  .phone-bind-btn{
+    padding-bottom: 15px;
+    text-align: center;
+
+    .bind-btn{
+      width: 120px;
+      height: 32px;
+      line-height: 32px;
+      border: none;
+      outline: none;
+      border-radius: 3px;
+      &.sure{
+        color: #fff;
+        background-color: @color-orange;
+
+        &:hover{
+          background-color: @color-orange-deep;
+        }
+      }
+
+      &.no{
+        color: #999;
+        border: 1px solid #ccc;
+        background-color: #f7f7f7;
+
+        &:hover{
+          color: #fff;
+          border-color: @color-orange-deep;
+          background-color: @color-orange-deep;
+        }
+      }
+    }
+  }
+
+  //校验错误提示
+  .error-msg {
+    position: absolute;
+    top: 37px;
+    padding-left: 20px;
+    font-size: 14px;
+    height: 20px;
+    line-height: 20px;
+    color: #ff0000;
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 2px;
+      left: 0;
+      width: 16px;
+      height: 16px;
+      background: url(@icon-imgUrl) -14px -49px;
+    }
+  }
+}
+
+//活动列表
+.bargain {
+  position: relative;
+
+  //标题
+  .title {
+    width: 100%;
+    font-size: 18px;
+    color: #666;
+    margin-bottom: 8px;
+
+    .title-name {
+      position: relative;
+      padding-left: 10px;
+      line-height: 32px;
+
+      &:after {
+        content: "";
+        position: absolute;
+        top: 7px;
+        left: 0;
+        width: 2px;
+        height: 20px;
+        background-color: @color-orange-deep;
+      }
+
+      .end-date {
+        position: relative;
+        padding: 3px 17px 3px 30px;
+        margin-left: 10px;
+        font-size: 14px;
+        color: #ff981a;
+        background-color: #fff;
+        border-radius: 3px;
+
+        &:after {
+          content: "";
+          position: absolute;
+          left: 10px;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 16px;
+          height: 16px;
+          background: url("http://static-10006892.file.myqcloud.com/public/img/coupon-icon.png") no-repeat -265px -15px;
+        }
+
+        .end-date-item {
+          &:not(:last-child) {
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+
+  //活动列表内容
+  .bargain-content {
+    position: absolute;
+    padding-top: 20px;
+    font-size: 14px;
+    color: #666;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+
+    .new-action-txt {
+      position: relative;
+      margin-bottom: 20px;
+      padding-left: 20px;
+      line-height: 22px;
+      text-align: left;
+      font-size: 20px;
+      color: #333333;
+  
+      &:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 20px;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        background: #ff981a;
+      }
+    }
+
+    .add-new {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+    }
+  }
+
+  //活动列表标题
+  .bargain-list-header {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+
+    li {
+      float: left;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      background-color: @color-orange;
+
+      &:first-child {
+        border-top-left-radius: 5px;
+      }
+
+      &:last-child {
+        border-top-right-radius: 5px;
+      }
+    }
+  }
+
+  //活动列表内容
+  .bargain-list-content {
+    padding: 19px;
+
+    .bargain-item-wrap {
+
+      &:not(.page) {
+        padding: 18px 0;
+        text-align: center;
+        border: 1px solid #ccc;
+        background-color: #FFF9F2;
+        margin-bottom: 5px;
+      }
+
+      .bargain-item-content {
+        cursor: pointer;
+
+        &:hover {
+          .list-name-content {
+            color: @color-orange-deep;
+          }
+        }
+
+        li {
+          font-size: 14px;
+          line-height: 20px;
+          float: left;
+
+          &:not(.activity-date) {
+            margin-top: 10px;
+          }
+        }
+
+        //商品名称
+        .list-name {
+
+          .code {
+            position: relative;
+            display: inline-block;
+            margin: 0 10px 0 20px;
+
+            .list-name-code {
+              width: 22px;
+              height: 22px;
+              vertical-align: top;
+              background: url(@icon-imgUrl) -349px -15px;
+              cursor: pointer;
+
+              &:hover {
+                background: url(@icon-imgUrl) -401px -15px;
+              }
+            }
+
+            //二维码
+            .qrcode {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 156px;
+              height: 156px;
+              border: 3px solid #FF981A;
+              -webkit-transform: scale(0.1);
+              -moz-transform: scale(0.1);
+              -ms-transform: scale(0.1);
+              -o-transform: scale(0.1);
+              transform: scale(0.1);
+              -webkit-transform-origin: 0 0;
+              -moz-transform-origin: 0 0;
+              -ms-transform-origin: 0 0;
+              -o-transform-origin: 0 0;
+              transform-origin: 0 0;
+              -webkit-transition: all 0.3s;
+              -moz-transition: all 0.3s;
+              -ms-transition: all 0.3s;
+              -o-transition: all 0.3s;
+              transition: all 0.3s;
+              z-index: -1;
+            }
+            //展示二维码
+            .qrcode-active {
+              border: 3px solid #FF981A;
+              -webkit-transform: scale(1);
+              -moz-transform: scale(1);
+              -ms-transform: scale(1);
+              -o-transform: scale(1);
+              transform: scale(1);
+              -webkit-transition: all 0.3s;
+              -moz-transition: all 0.3s;
+              -ms-transition: all 0.3s;
+              -o-transition: all 0.3s;
+              transition: all 0.3s;
+              z-index: 10;
+            }
+          }
+
+          .list-name-content {
+            display: inline-block;
+            width: 165px;
+            height: 22px;
+            line-height: 22px;
+            text-align: left;
+          }
+        }
+        //商城商品
+        .mall-goods {
+          position: relative;
+          padding-left: 26px;
+
+          &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 20px;
+            height: 20px;
+            background: url(@icon-imgUrl) -299px -15px;
+          }
+        }
+
+        //活动操作
+        .activity-operation {
+          cursor: pointer;
+
+          span {
+            margin: 0 3px;
+
+            &:hover {
+              color: @color-orange-deep;
+            }
+          }
+        }
+      }
+    }
+    //加载更多
+    .bargain-more {
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      margin-top: 10px;
+      background-color: #f7f7f7;
+      cursor: pointer;
+
+      &:hover {
+        color: @color-orange-deep;
+      }
+    }
+  }
+
+  //活动列表单元格宽度
+  .activity-header-name,
+  .activity-name {
+    width: 225px;
+  }
+  .activity-header-date,
+  .activity-date {
+    width: 180px;
+  }
+  .activity-header-keyword,
+  .activity-keyword {
+    width: 135px;
+  }
+  .activity-header-num,
+  .activity-num {
+    width: 100px;
+  }
+  .activity-header-status,
+  .activity-status {
+    width: 100px;
+  }
+  .activity-header-operation,
+  .activity-operation {
+    width: 220px;
+  }
+
+}
+
+//活动统计
+.bargain-statistics {
+  padding: 10px 10px 50px 10px;
+  margin-top: 308px;
+  background-color: #fff;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+
+  .statistics-content {
+    position: relative;
+    color: #666;
+    font-size: 14px;
+
+    //现在去发货
+    .go-mall {
+      position: absolute;
+      top: 0;
+      right: 20px;
+      height: 40px;
+      line-height: 40px;
+      color: @color-orange-deep;
+      z-index: 10;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    //活动统计筛选框
+    .act-statistics-title {
+      margin: 20px;
+
+      //选择状态
+      .shop-status {
+
+        span {
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          margin-right: 5px;
+          vertical-align: top;
+        }
+
+        .comp-idouzi-selection {
+          display: inline-block;
+        }
+      }
+      //日期
+      .date {
+        margin-left: 27px;
+
+        .picker {
+          float: left;
+          width: 130px;
+          height: 32px;
+        }
+
+        span {
+          display: inline-block;
+          width: 25px;
+          text-align: center;
+          height: 32px;
+          line-height: 32px;
+          vertical-align: top;
+        }
+      }
+
+      //导出按钮
+      .export {
+        height: 30px;
+        text-align: center;
+        margin-left: 15px;
+        border: 1px solid #FF981A;
+        color: #FF981A;
+        background-color: #fff;
+        cursor: pointer;
+        padding: 0 10px;
+
+        &:hover {
+          color: #fff;
+          background-color: @color-orange-deep;
+        }
+      }
+      //搜索框
+      .search {
+        width: 200px;
+        height: 32px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0 10px;
+
+        input {
+          width: 150px;
+          height: 100%;
+          border: none;
+        }
+
+        .search-btn {
+          width: 20px;
+          height: 20px;
+          margin-top: 5px;
+          background: url(@icon-imgUrl) -199px -15px;
+          cursor: pointer;
+        }
+      }
+    }
+
+    //活动统计展示列表
+    .act-statistics-content {
+      width: 100%;
+      font-size: 14px;
+      line-height: 40px;
+      text-align: center;
+      color: #666;
+
+      ul {
+        border-radius: 5px;
+      }
+
+      //活动统计列表表头
+      .content-header {
+        background-color: #f7f7f7;
+
+        li {
+          float: left;
+          height: 40px;
+        }
+      }
+      //活动统计列表内容
+      .content-list {
+        .content-list-item {
+          margin-top: 10px;
+          border: 1px solid #e6e6e6;
+
+          li {
+            float: left;
+            height: 40px;
+
+            //兑奖按钮
+            .cash-btn {
+              width: 50px;
+              height: 26px;
+              line-height: 24px;
+              color: @color-orange-deep;
+              border: 1px solid @color-orange-deep;
+              background-color: #fff;
+              cursor: pointer;
+            }
+          }
+
+          //砍到价格最低样式
+          .lower-price {
+            color: @color-orange-deep;
+          }
+        }
+      }
+      //商城商品单元格宽度
+      .mall-goods-name {
+        width: 95px;
+      }
+      .mall-goods-tel {
+        width: 130px;
+      }
+      .mall-goods-address {
+        width: 265px;
+      }
+      .mall-goods-prize {
+        width: 225px;
+      }
+      .mall-goods-num {
+        width: 80px;
+      }
+      .mall-goods-price {
+        width: 90px;
+      }
+      .mall-goods-status {
+        width: 73px;
+      }
+      //非商城商品单元格宽度
+      .nonmall-goods-name,
+      .nonmall-goods-num {
+        width: 80px;
+      }
+      .nonmall-goods-tel {
+        width: 100px;
+      }
+      .nonmall-goods-address {
+        width: 215px;
+      }
+      .nonmall-goods-prize {
+        width: 190px;
+      }
+      .nonmall-goods-price,
+      .nonmall-goods-code {
+        width: 90px;
+      }
+      .nonmall-goods-status {
+        width: 65px;
+      }
+      .nonmall-goods-cash {
+        width: 60px;
+      }
+    }
+
+    //没有商品数据是展示
+    .statistics-nondata {
+      padding: 30px 0;
+      font-size: 16px;
+      text-align: center;
+    }
+  }
+  //修改数据统计的mask的z-index值
+  .el-loading-mask {
+    z-index: 900;
+  }
+}
+
+//未购买弹窗样式
+.gomall-dialog-nocoupon {
+  .el-dialog {
+    &.gomall-dialog{
+      height: 190px;
+    }
+  }
+}
+
+.el-dialog {
+  &.gomall-dialog {
+    width: 360px;
+    height: 365px;
+
+    .el-dialog__header {
+      position: relative;
+      height: 40px;
+      margin: 0 10px;
+      padding: 10px 0 10px 10px;
+      border-bottom: 1px solid #ff981a;
+
+      .el-dialog__title {
+        font-size: 14px;
+        line-height: 20px;
+        color: #333;
+      }
+
+      .el-dialog__headerbtn {
+        margin-right: 5px;
+
+        .el-dialog__close {
+          color: #999;
+          font-size: 12px;
+        }
+      }
+    }
+
+    .gomall-dialog-content {
+      min-height: 100px;
+      padding: 20px 20px 0;
+      font-size: 14px;
+      line-height: 20px;
+      color: #666;
+    }
+
+    .gomall-dialog-footer {
+      margin-bottom: 20px;
+
+      .gomall-footer-confim {
+        text-align: center;
+
+        .gomall-confirm-btn {
+          position: static;
+          width: 160px;
+          height: 32px;
+          line-height: 32px;
+          font-size: 12px;
+          border-radius: 3px;
+          text-align: center;
+          border: none;
+          color: #fff;
+          background-color: #ff981a;
+          display: inline-block;
+        }
+      }
+    }
+
+    .gomall-dialog-coupon {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      width: 100%;
+      height: 160px;
+      background-color: #ffeeeb;
+
+      .gomall-coupon-title {
+        margin: 20px 0 10px 0;
+        font-size: 14px;
+        text-align: center;
+        color: #ff981a;
+      }
+
+      .gomall-cpupon-content {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        border-radius: 3px;
+      }
+
+      .gomall-coupon-info-wrap {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        position: relative;
+        background: url("http://static-10006892.file.myqcloud.com/public/img/coupon-icon-2-min.png") -15px -15px no-repeat;
+      }
+
+      .gomall-coupon-info {
+        position: relative;
+        width: 176px;
+        padding: 0 10px;
+        margin: 5px 7px;
+        border-radius: 3px;
+        background-color: #ffeeeb;
+
+        .gomall-coupon-size {
+          position: relative;
+          color: #ff8066;
+
+          .gomall-size-number {
+            padding-left: 13px;
+            font-size: 32px;
+            font-family: Impact;
+            line-height: 37px;
+          }
+
+          .gomall-size-type {
+            position: absolute;
+            bottom: 5px;
+            left: 66px;
+            font-size: 16px;
+          }
+        }
+
+        .gomall-coupone-date {
+          padding: 4px 0;
+          border-top: 1px dashed #ffbeb1;
+
+          .gomall-coupone-date-text {
+            margin: 0;
+            font-size: 12px;
+            line-height: 15px;
+            color: #666;
+
+            &:first-child {
+              margin-bottom: 2px;
+            }
+          }
+        }
+      }
+
+      .gomall-coupon-list-status {
+        position: relative;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-sizing: border-box;
+        box-sizing: border-box;
+        -webkit-box-align: start;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        width: 45px;
+        height: 88px;
+        padding: 20px 8px 0;
+        line-height: 16px;
+        font-size: 14px;
+        line-height: 16px;
+        border-radius: 3px;
+        color: #fff;
+        background-color: #ff957f;
+
+        &:before {
+          content: '';
+          position: absolute;
+          top: 57px;
+          left: 50%;
+          -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+          width: 18px;
+          height: 18px;
+          background: url(http://static-10006892.file.myqcloud.com/public/img/coupon-icon.png) -0 -241px no-repeat;
+        }
+      }
+    }
+  }
+}
+[v-cloak] {
+  display: none;
+}
+
+// 复制成功弹窗
+.msg-box {
+  position: fixed;
+  top: 50%;
+  width: 140px;
+  height: 105px;
+  left: 50%;
+  margin: 100px 0 0 -86px;
+  padding: 25px 40px;
+  text-align: center;
+  font-size: 12px;
+  color: #fff;
+  border-radius: 5px;
+  background: rgba(0, 0, 0, .5);
+  transition: all linear .2s;
+
+  i {
+    display: inline-block;
+    font-size: 35px;
+    color: #3DBD7D;
+  }
+}

@@ -1,0 +1,890 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #F34848;
+}
+body * {
+  box-sizing: border-box;
+}
+body p {
+  margin: 0;
+}
+body button {
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+body [v-cloak] {
+  display: none;
+}
+body .loading-text {
+  display: none;
+}
+body.loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+body.loading:before {
+  content: "";
+  position: absolute;
+  left: -10vw;
+  top: 10vh;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 10px;
+  background-color: #FFD500;
+  transform: rotate(45deg);
+  z-index: 12;
+}
+body.loading:after {
+  content: "";
+  position: absolute;
+  right: 7vw;
+  top: 45vh;
+  width: 5vw;
+  height: 5vw;
+  border-radius: 5px;
+  background-color: #FFD500;
+  transform: rotate(45deg);
+  z-index: 12;
+}
+body.loading .loading-text {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding-top: 30vh;
+  font-size: 40px;
+  font-weight: bold;
+  color: #FFD500;
+  text-align: center;
+  background-color: #F34848;
+  z-index: 11;
+}
+body.loading .loading-text:after {
+  display: block;
+  content: "拼命加载中...";
+  color: #FFF;
+  font-size: 14px;
+  font-weight: normal;
+}
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 70px;
+  border-bottom: 2px solid #FFD500;
+}
+header:after {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #FFD500;
+  border-radius: 5px;
+  transform: rotate(45deg);
+}
+header .left {
+  position: relative;
+  top: -20px;
+  left: -12px;
+  width: 40px;
+  height: 40px;
+  background-color: #FFD500;
+  border-radius: 5px;
+  transform: rotate(45deg);
+}
+header .left:after {
+  position: absolute;
+  top: 15px;
+  left: 50px;
+  display: block;
+  content: "";
+  width: 15px;
+  height: 15px;
+  background-color: #BBD755;
+  border-radius: 5px;
+  transform: rotate(45deg);
+}
+header .wx-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+header .wx-msg .avator {
+  width: 50px;
+  height: 50px;
+  border: 1px solid #FFD500;
+  border-radius: 50%;
+}
+header .wx-msg .nickname {
+  margin-left: 5px;
+  color: #FFD500;
+  font-size: 20px;
+}
+header .wx-msg .nickname.not-self:after {
+  display: block;
+  content: "邀请您帮ta砍价";
+  color: #FFF;
+  font-size: 16px;
+}
+header .act-explain-btn {
+  width: 71px;
+  height: 25px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -383px -105px;
+  background-size: 525px auto;
+  z-index: 1;
+}
+header .act-explain-btn:active {
+  background-position: -383px -135px;
+}
+#idouzi-ad {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+}
+#empty {
+  height: 10vw;
+  background: none;
+}
+.main .swipe {
+  position: relative;
+}
+.main .swipe .swipe-wrap {
+  display: block;
+  width: 100%;
+  height: 53vw;
+  border-bottom: 3px solid #FFD500;
+}
+.main .swipe .swipe-wrap .goods-swiper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+.main .swipe .swipe-wrap .goods-swiper .swiper-wrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+}
+.main .swipe .swipe-wrap .goods-swiper .swiper-wrapper .swiper-slide {
+  display: flex;
+  height: 100%;
+  flex-shrink: 0;
+}
+.main .swipe .swipe-wrap .goods-swiper .swiper-wrapper .swiper-slide .slide-img {
+  width: 100%;
+  height: 100%;
+}
+.main .swipe .swipe-wrap .swiper-pagination {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+}
+.main .swipe .swipe-wrap .swiper-pagination .swiper-pagination-bullet {
+  display: inline-block;
+  margin: 0 5px;
+  width: 8px;
+  height: 8px;
+  background-color: #FFF;
+  border-radius: 50%;
+  transition: all .3s;
+}
+.main .swipe .swipe-wrap .swiper-pagination .swiper-pagination-bullet.swiper-pagination-bullet-active {
+  background-color: #FFD500;
+  transition: all .3s;
+}
+.main .swipe .time-wrap {
+  position: absolute;
+  bottom: -15px;
+  width: 100%;
+  text-align: center;
+}
+.main .swipe .time-wrap .time {
+  display: inline-block;
+  width: 200px;
+  padding: 5px 0;
+  color: #582402;
+  font-size: 14px;
+  background-color: #FFF;
+  border: 2px solid #582402;
+  border-radius: 6px;
+}
+.main .swipe .time-wrap .time .icon-clock {
+  display: inline-block;
+  margin: 4px 3px 0;
+  width: 14px;
+  height: 14px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -473px -78px;
+  background-size: 500px auto;
+  vertical-align: top;
+}
+.main .price-progress {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 60px;
+}
+.main .price-progress .price-item {
+  flex: 1;
+  font-size: 20px;
+  color: #FFD500;
+  text-align: center;
+}
+.main .price-progress .price-item:before {
+  display: inline-block;
+  content: "￥";
+}
+.main .price-progress .price-item:after {
+  display: block;
+  font-size: 14px;
+  color: #FFF;
+  text-align: center;
+}
+.main .price-progress .price-item.original-price:after {
+  content: "原价";
+}
+.main .price-progress .price-item.lowest-price:after {
+  content: "最低价";
+}
+.main .price-progress .progress {
+  width: 60%;
+  display: flex;
+  align-items: center;
+}
+.main .price-progress .progress .out-bar {
+  position: relative;
+  width: 100%;
+  height: 16px;
+  background-color: #FFF;
+  border: 2px solid #582402;
+  border-radius: 10px;
+}
+.main .price-progress .progress .out-bar .cur-progress {
+  position: absolute;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: #8FC31F;
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, 0.15) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.15) 50%, rgba(255, 255, 255, 0.15) 75%, transparent 75%, transparent);
+  background-size: 10px 10px;
+  border-radius: 10px;
+  transition: all 1s;
+}
+.main .price-progress .progress .out-bar .cur-price {
+  display: table;
+  position: absolute;
+  top: -45px;
+  padding: 2px 8px;
+  color: #FFF;
+  background-color: #333;
+  border-radius: 3px;
+  transition: all 1s;
+}
+.main .price-progress .progress .out-bar .cur-price:before {
+  content: "已砍";
+}
+.main .price-progress .progress .out-bar .cur-price:after {
+  content: "";
+  position: absolute;
+  left: 45%;
+  bottom: -4px;
+  width: 10px;
+  height: 10px;
+  background-color: #333;
+  border-radius: 10px 0 2px;
+  transform: rotate(45deg);
+}
+.main .price-progress .progress .out-bar .cur-price.is-lowest {
+  left: 50%;
+  margin-left: -51px;
+}
+.main .price-progress .progress .out-bar .cur-price.is-lowest:before {
+  content: "已砍至最低";
+}
+.main .price-progress .progress .out-bar .cur-price .price-num {
+  color: #FFD500;
+  font-size: 18px;
+}
+.main .price-progress .progress .out-bar .cur-price .price-num:before {
+  content: "￥";
+}
+.main .goods-name {
+  margin: 5px 0 0 0;
+  font-size: 20px;
+  color: #FFF;
+  text-align: center;
+}
+.main .goods-name .stock {
+  color: #582402;
+  font-size: 16px;
+}
+.main .btn-wrap {
+  position: relative;
+  margin-top: 20px;
+  text-align: center;
+}
+.main .btn-wrap .btn {
+  width: 182px;
+  height: 46px;
+  padding: 5px 0 0;
+  text-align: center;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent 0 0;
+  background-size: 520px auto;
+}
+.main .btn-wrap .btn:after {
+  display: inline-block;
+  content: "";
+  height: 19px;
+}
+.main .btn-wrap .btn.btn-join:after {
+  width: 71px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -373px -272px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-bargain-self:after {
+  width: 82px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -354px -173px;
+  background-size: 485px auto;
+}
+.main .btn-wrap .btn.btn-buy:after {
+  width: 71px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -372px -205px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-get:after {
+  width: 71px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -372px -227px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-check:after {
+  width: 126px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -372px -34px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-got:after {
+  width: 53px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -447px -205px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn:active {
+  background-position: 0 -102px;
+}
+.main .btn-wrap .btn:disabled {
+  background-position: 0 -51px;
+}
+.main .btn-wrap .btn.btn-sm {
+  width: 140px;
+  margin: 0 5px;
+}
+.main .btn-wrap .btn.btn-sm.btn-bargain {
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -144px -294px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-sm.btn-bargain:after {
+  width: 70px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -373px -317px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-sm.btn-bargain:active {
+  background-position: 0 -244px;
+}
+.main .btn-wrap .btn.btn-sm.btn-join2 {
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent 0 -294px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-sm.btn-join2:after {
+  width: 71px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -373px -250px;
+  background-size: 510px auto;
+}
+.main .btn-wrap .btn.btn-sm.btn-join2:active {
+  background-position: -144px -244px;
+}
+.main .btn-wrap .btn.btn-sm.btn-join2:disabled {
+  background-position: -185px -196px;
+}
+.main .btn-wrap:after {
+  display: none;
+  position: absolute;
+  top: -20px;
+  right: 20px;
+  content: "";
+  width: 86px;
+  height: 81px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -288px -98px;
+  background-size: 525px auto;
+  border-radius: 50%;
+}
+.main .btn-wrap.is-lowest:after {
+  display: block;
+}
+.main .participation-num-store .participation-num,
+.main .participation-num-store .share-tips {
+  margin-top: 5px;
+  color: #582402;
+  font-size: 14px;
+  text-align: center;
+}
+.main .participation-num-store .participation-num.notice,
+.main .participation-num-store .share-tips.notice {
+  font-size: 16px;
+  font-weight: bold;
+  color: #FFD500;
+}
+.main .participation-num-store .act-store {
+  margin: 20px 0 0 0;
+  color: #582402;
+  font-size: 14px;
+  text-align: center;
+}
+.main .participation-num-store .act-store:before {
+  display: inline-block;
+  content: "";
+  margin-right: 5px;
+  width: 19px;
+  height: 17px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -492px -58px;
+  background-size: 520px auto;
+  vertical-align: top;
+}
+.main .helper-wrap {
+  position: relative;
+  width: 80%;
+  margin: 0 auto;
+  padding: 30px 10px;
+  border-top: 1px dashed #582402;
+  margin-top: 30px;
+  padding-top: 55px;
+}
+.main .helper-wrap:before,
+.main .helper-wrap:after {
+  position: absolute;
+  top: -3px;
+  content: "";
+  width: 3px;
+  height: 3px;
+  border: 1px solid #582402;
+  border-radius: 50%;
+}
+.main .helper-wrap:before {
+  left: -4px;
+}
+.main .helper-wrap:after {
+  right: -4px;
+}
+.main .helper-wrap .helper-container {
+  position: relative;
+  background-color: #FFD500;
+  border: 1px solid #582402;
+  border-radius: 5px;
+}
+.main .helper-wrap .helper-container:before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  margin-left: -70px;
+  width: 140px;
+  height: 30px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -375px 0;
+  background-size: 514px auto;
+}
+.main .helper-wrap .helper-container .helper-list {
+  position: relative;
+  max-height: 365px;
+  margin: 20px 10px 10px;
+  overflow: hidden;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul {
+  margin: 0;
+  padding: 0;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul:after {
+  display: block;
+  color: #FFF;
+  font-size: 14px;
+  text-align: center;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul.loading:after {
+  content: "加载中...";
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul.is-last:after {
+  content: "无更多数据";
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  border-top: 1px solid #582402;
+  padding: 10px 0;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item:first-child {
+  border-top: none;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .helper-msg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .helper-msg .helper-avator {
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  background-color: blue;
+  border: 1px solid #FFF;
+  border-radius: 50%;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .helper-msg .helper-text {
+  padding-left: 5px;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .helper-msg .helper-text .helper-time {
+  font-size: 12px;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .bargain-price {
+  color: #F24949;
+  font-size: 20px;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .bargain-price:before {
+  content: "-￥";
+  white-space: nowrap;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .bargain-price.add {
+  color: #62B311;
+}
+.main .helper-wrap .helper-container .helper-list .helper-ul .helper-item .bargain-price.add:before {
+  content: "+￥";
+}
+.main .helper-wrap .helper-container .helper-list .swiper-scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 3;
+}
+.main .helper-wrap .helper-container .helper-list .swiper-scrollbar .swiper-scrollbar-drag {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.main .helper-wrap .helper-container .helper-list .helper-empty {
+  padding: 10px 0;
+  text-align: center;
+}
+.main .helper-wrap .helper-container .helper-list .helper-empty:before {
+  content: "·砍价第一好汉·";
+  font-weight: bold;
+}
+.main .helper-wrap .helper-container .helper-list .helper-empty:after {
+  display: block;
+  margin-top: 5px;
+  content: "招募中...";
+  font-size: 14px;
+}
+footer {
+  margin-top: 20px;
+  padding-bottom: 50px;
+  border-bottom: 20px solid #FFD500;
+}
+.bargaining {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.tips {
+  display: flex;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+.tips .tips-text {
+  max-width: 70%;
+  padding: 10px 15px;
+  color: #FFF;
+  font-size: 14px;
+  text-align: center;
+  border-radius: 4px;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+.modal-mask {
+  display: flex;
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  transition: opacity .3s ease;
+}
+.modal-mask .modal-wrapper {
+  position: relative;
+  width: 85%;
+  padding: 40px 10px;
+  text-align: center;
+  background-color: #FFF9D9;
+  border: 2px solid #FFD500;
+  border-radius: 10px;
+  transition: all .3s ease;
+}
+.modal-mask .modal-wrapper .modal-title {
+  position: absolute;
+  top: -22px;
+  left: 50%;
+  width: 180px;
+  height: 40px;
+  margin-left: -90px;
+  padding-top: 10px;
+  background-color: #F24949;
+  border: 1px solid #FFD500;
+  border-radius: 10px;
+}
+.modal-mask .modal-wrapper .modal-title:before {
+  content: "";
+  display: inline-block;
+  height: 18px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent 0 0;
+  background-size: 510px auto;
+}
+.modal-mask .modal-wrapper .modal-btn {
+  position: absolute;
+  bottom: -23px;
+  left: 50%;
+  width: 182px;
+  height: 46px;
+  margin-left: -91px;
+  padding: 5px 0 0;
+  text-align: center;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent 0 0;
+  background-size: 520px auto;
+}
+.modal-mask .modal-wrapper .modal-btn:after {
+  display: inline-block;
+  content: "";
+  height: 18px;
+}
+.modal-mask .modal-wrapper .modal-btn:active {
+  background-position: 0 -102px;
+}
+.modal-mask .modal-wrapper .modal-btn:disabled {
+  background-position: 0 -51px;
+}
+.modal-mask.modal-enter,
+.modal-mask.modal-leave-active {
+  opacity: 0;
+}
+.modal-mask.modal-enter .modal-wrapper,
+.modal-mask.modal-leave-active .modal-wrapper {
+  transform: scale(1.1);
+}
+/*底部二维码*/
+.footer {
+  margin: 15px auto 0;
+  color: #2a2a2a;
+  text-align: center;
+}
+.footer .code {
+  box-sizing: border-box;
+  background: #FFD500;
+  width: 60%;
+  margin: 10px auto 20px;
+  border: 2px solid #592500;
+  border-radius: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.footer .code .qrcode-url {
+  width: 100%;
+  height: 100%;
+  display: block;
+  margin: auto;
+}
+.explain-container .modal-wrapper {
+  padding: 40px 25px;
+}
+.explain-container .modal-wrapper .modal-title:before {
+  width: 71px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -371px -295px;
+  background-size: 510px auto;
+}
+.explain-container .modal-wrapper .modal-container .swiper-container {
+  position: relative;
+  max-height: 55vh;
+  overflow: hidden;
+}
+.explain-container .modal-wrapper .modal-container .swiper-container .content {
+  text-align: left;
+}
+.explain-container .modal-wrapper .modal-container .swiper-container .content img {
+  max-width: 100%;
+}
+.explain-container .modal-wrapper .modal-container .swiper-container .content * {
+  white-space: normal !important;
+  word-wrap: break-word !important;
+  word-break: break-all !important;
+}
+.explain-container .modal-wrapper .modal-container .swiper-container .swiper-scrollbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 5px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  z-index: 3;
+}
+.explain-container .modal-wrapper .modal-container .swiper-container .swiper-scrollbar .swiper-scrollbar-drag {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 10px;
+}
+.explain-container .modal-wrapper .modal-btn:after {
+  width: 53px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -447px -228px;
+  background-size: 510px auto;
+}
+.form-container .modal-wrapper .modal-title:before {
+  width: 108px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -371px -79px;
+  background-size: 510px auto;
+}
+.form-container .modal-wrapper .modal-container .label-item {
+  display: block;
+}
+.form-container .modal-wrapper .modal-container .label-item .input-item {
+  width: 60%;
+  height: 34px;
+  margin: 0 0 10px 10px;
+  padding: 0 5px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #979797;
+  border-radius: 5px;
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+.form-container .modal-wrapper .modal-container .label-item .input-item:focus,
+.form-container .modal-wrapper .modal-container .label-item .input-item:active {
+  border-color: #FFD500;
+}
+.form-container .modal-wrapper .modal-btn:after {
+  width: 36px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -463px -183px;
+  background-size: 510px auto;
+}
+.emoji-modal .modal-title {
+  top: -65px !important;
+  margin-left: -45px !important;
+  padding-top: 0 !important;
+  width: 90px !important;
+  height: 92px !important;
+  background-color: transparent !important;
+  border: none !important;
+  border-radius: 0 !important;
+}
+.emoji-modal .modal-title:before {
+  display: none;
+}
+.emoji-modal .modal-container {
+  font-size: 18px;
+}
+.emoji-modal .modal-container .price-num {
+  color: #F34848;
+}
+.bargain-sub-container .modal-title {
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent 0 -148px;
+  background-size: 510px auto;
+}
+.bargain-sub-container .modal-btn:after {
+  width: 54px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -447px -102px;
+  background-size: 510px auto;
+}
+.bargain-add-container .modal-title {
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -93px -148px;
+  background-size: 510px auto;
+}
+.bargain-add-container .modal-btn:after {
+  width: 108px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -372px -57px;
+  background-size: 510px auto;
+}
+.redeem-code-container .modal-wrapper .modal-title:before {
+  width: 54px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -447px -130px;
+  background-size: 510px auto;
+}
+.redeem-code-container .modal-wrapper .modal-container {
+  padding: 15px 0;
+  font-size: 18px;
+}
+.redeem-code-container .modal-wrapper .modal-btn:after {
+  width: 36px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -465px -160px;
+  background-size: 510px auto;
+}
+.event-over-container .modal-title {
+  width: 94px !important;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -182px 0;
+  background-size: 510px auto;
+}
+.event-over-container .modal-container:before {
+  content: "活动结束啦~感谢支持哦~";
+  font-size: 18px;
+}
+.event-over-container .modal-container .modal-footer-txt {
+  font-size: 14px;
+}
+.event-over-container .modal-container .code-container {
+  width: 60%;
+  height: 45vw;
+  margin: 10px auto 0;
+  padding: 10px;
+  background-color: #FFD500;
+  border: 1px solid #582402;
+  border-radius: 10px;
+}
+.event-over-container .modal-container .code-container .code-img {
+  width: 100%;
+  height: 100%;
+}
+.event-over-container .modal-btn:after {
+  width: 126px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -372px -34px;
+  background-size: 510px auto;
+}
+.sold-out-container .modal-title {
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -279px 0;
+  background-size: 510px auto;
+}
+.sold-out-container .modal-btn:after {
+  width: 70px;
+  background: url("http://static-10006892.file.myqcloud.com/bargain/mobile/img/sprite.png") no-repeat transparent -372px -160px;
+  background-size: 510px auto;
+}

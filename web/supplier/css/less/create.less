@@ -1,0 +1,1149 @@
+@color-orange-deep: #FF981A;
+@color-orange: #FFC44D;
+@icon-imgUrl: "http://static-10006892.file.myqcloud.com/bargain/supplier/img/bargain-icon.png";
+@icon-imgLocal: 'http://static-10006892.file.myqcloud.com/bargain/supplier/img';
+@ie-hack: ~"\9";
+
+//重置插件样式
+body {
+  //重置dialog样式
+  .el-dialog {
+    width: 650px;
+  }
+
+  .el-dialog__header {
+    padding: 0;
+  }
+
+  .el-dialog__body {
+    padding: 0;
+    border-radius: 5px;
+  }
+
+  //重置编辑器样式
+  .edui-container {
+    border-radius: 3px;
+    box-shadow: none;
+
+    .edui-toolbar {
+      box-shadow: none;
+    }
+
+    .edui-toolbar {
+      border-top-left-radius: 3px;
+      border-top-right-radius: 3px;
+    }
+
+    .edui-editor-body {
+      border-bottom-left-radius: 3px;
+      border-bottom-right-radius: 3px;
+    }
+
+  }
+
+  //重置时间选择
+  .el-date-editor.el-input {
+    width: 181px;
+  }
+
+  .el-form-item__content {
+    line-height: inherit;
+  }
+
+  .el-dialog__wrapper {
+    line-height: 40px;
+  }
+
+  //elements样式重置
+  .el-tabs__content {
+    overflow: inherit;
+  }
+  .el-form {
+    padding-top: 40px;
+  }
+
+  //修改商品名称错误导致选择微商城商品分类框变红
+  .goods-name.is-error {
+
+    .el-select {
+
+      input {
+        border-color: #ccc;
+      }
+    }
+  }
+}
+
+.title {
+  font-size: 16px;
+  line-height: 22px;
+  color: #666666;
+  margin: 15px 0;
+  .title-nav {
+    .now {
+      color: @color-orange-deep;
+    }
+    a {
+      font-size: 16px;
+      color: inherit;
+    }
+  }
+}
+
+.width-80 {
+  width: 80px;
+}
+
+.width-100 {
+  width: 100px;
+}
+
+.width-130 {
+  width: 130px;
+}
+
+.width-260 {
+  width: 295px;
+}
+
+.width-285 {
+  width: 285px;
+}
+
+.width-300 {
+  width: 300px;
+}
+
+.width-400 {
+  width: 400px;
+}
+
+//校验错误提示
+.error-msg {
+  position: absolute;
+  top: 37px;
+  padding-left: 20px;
+  font-size: 14px;
+  height: 20px;
+  line-height: 20px;
+  color: #ff0000;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 2px;
+    left: 0;
+    width: 16px;
+    height: 16px;
+    background: url(@icon-imgUrl) -14px -49px;
+  }
+}
+
+.banner-error {
+  top: 63px;
+}
+
+.content-error {
+  top: 302px;
+}
+
+//主体内容
+.content {
+  width: 1000px;
+  background-color: #fff;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  padding: 30px 50px 50px 50px;
+  .setting {
+    padding-bottom: 20px;
+  }
+
+  //左侧手机
+  .phone-wrap {
+    width: 270px;
+    height: 560px;
+    margin: 70px 50px 0 0;
+    background: url(@icon-imgUrl) -305px -93px;
+
+    .phone-content {
+      position: relative;
+      width: 230px;
+      height: 420px;
+      overflow-y: hidden;
+      margin: 68px 0 0 20px;
+    }
+
+    .phone-inner {
+      width: 100%;
+      //跳转按钮
+      .phone-indexButton {
+        position: absolute;
+        left: 59px;
+        width: 112px;
+        height: 30px;
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      //活动说明按钮
+      .phone-actDescriptionButton {
+        position: absolute;
+        top: 53px;
+        right: 0;
+        width: 45px;
+        height: 15px;
+      }
+
+      //返回按钮
+      .phone-back {
+        position: absolute;
+        top: 13px;
+        left: 0;
+        width: 60px;
+        height: 25px;
+      }
+    }
+    //砍价主页
+    .phone-index {
+      height: 570px;
+      background: url(@icon-imgUrl) -25px -93px;
+
+      .phone-indexButton {
+        top: 296px;
+      }
+    }
+    //填写信息
+    .phone-write {
+      height: 409px;
+      background: url('@{icon-imgLocal}/write-phone.png');
+
+      .phone-indexButton {
+        top: 220px;
+      }
+    }
+    //自己砍一刀
+    .phone-cut {
+      height: 730px;
+      background: url('@{icon-imgLocal}/selfCut.png');
+
+      .phone-indexButton {
+        top: 295px;
+      }
+    }
+    //砍价成功
+    .phone-success {
+      height: 409px;
+      background: url('@{icon-imgLocal}/success-phone.png');
+
+      .phone-indexButton {
+        top: 219px;
+      }
+    }
+    //兑换奖品
+    .phone-prize {
+      height: 730px;
+      background: url('@{icon-imgLocal}/getPrize-phone.png');
+
+      .phone-indexButton {
+        top: 295px;
+      }
+    }
+    //兑奖码
+    .phone-prize-code {
+      height: 409px;
+      background: url('@{icon-imgLocal}/getPrizeCode-phone.png');
+
+      .phone-indexButton {
+        top: 219px;
+      }
+    }
+    //领奖完成
+    .phone-prize-success {
+      height: 730px;
+      background: url('@{icon-imgLocal}/getPrizeSuccess-phone.png');
+
+      .phone-indexButton {
+        top: 219px;
+      }
+    }
+    //活动说明
+    .phone-description {
+      height: 409px;
+      background: url('@{icon-imgLocal}/description.png');
+
+      .phone-indexButton {
+        top: 298px;
+      }
+    }
+
+    //高级设置手机样式
+    .phone-adv {
+      height: 420px;
+      background: url('@{icon-imgLocal}/phone-adv.png') no-repeat;
+      padding: 40px 10px 30px;
+    }
+    //关键词
+    .phone-keyword {
+      position: relative;
+      float: right;
+      border-radius: 5px;
+      margin: 25px 10px 0 0;
+      background-color: #AFEF3E;
+
+      .phone-keyword-inner {
+        min-width: 60px;
+        max-width: 158px;
+        padding: 0 5px;
+        font-size: 14px;
+        height: 30px;
+        line-height: 30px;
+        color: #666;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        right: -8px;
+        top: 50%;
+        width: 0;
+        height: 0;
+        margin-top: -5px;
+        border-top: 5px solid transparent;
+        border-left: 8px solid #ACE673;
+        border-bottom: 5px solid transparent;
+      }
+    }
+    //回复内容
+    .phone-reply {
+      padding: 10px;
+      margin-top: 75px;
+      color: #999;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #fff;
+
+      .phone-reply-title {
+        color: #666;
+      }
+
+      .phone-replydate {
+        font-size: 12px;
+        margin: 5px 0;
+      }
+
+      .phone-reply-img {
+        width: 100%;
+        height: 105px;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      .phone-reply-content {
+        font-size: 12px;
+        margin: 5px 0;
+      }
+
+      .phone-reply-lookmore {
+        padding: 3px 0;
+        font-size: 12px;
+        border-top: 1px solid #ccc;
+        color: #666;
+      }
+
+    }
+  }
+
+  //设置
+  .setting-content {
+    color: #666;
+    width: 580px;
+  }
+
+  //带数字统计的input
+  .input-num-wrap {
+    position: relative;
+
+    .input-num {
+      top: 10px;
+      right: 205px;
+    }
+  }
+
+  .input-num {
+    position: absolute;
+    line-height: 12px;
+    color: #ccc;
+
+    span {
+      float: left;
+      margin-left: 1px;
+      font-size: 12px;
+      line-height: 12px;
+    }
+  }
+
+  //带tips的上传按钮
+  .upload-banner {
+    .upload-btn {
+      position: relative;
+      width: 80px;
+      height: 30px;
+      line-height: 30px;
+      text-align: center;
+      background: @color-orange-deep;
+      color: #fff;
+      overflow: hidden;
+
+      input {
+        position: absolute;
+        top: 0;
+        left: -71px;
+        width: 200%;
+        height: 100%;
+        opacity: 0;
+        z-index: 10;
+        cursor: pointer;
+      }
+    }
+
+    .upload-btn-disabled {
+      color: #bbb;
+      background-color: #E9E9E9;
+    }
+
+    .upload-tip {
+      font-size: 12px;
+      line-height: 17px;
+      margin-top: 10px;
+      color: #999;
+    }
+  }
+
+  //付费模式修改的样式
+  .base-setting {
+    .model-tips {
+      position: relative;
+      padding-left: 22px;
+      margin-top: 10px;
+      color: #ff981a;
+
+      .strong {
+        font-weight: bold;
+      }
+
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 16px;
+        height: 16px;
+        background: url("http://static-10006892.file.myqcloud.com/public/img/coupon-icon.png") no-repeat -265px -15px;
+      }
+    }
+
+    .el-form {
+      padding-top: 20px;
+    }
+  }
+
+  //基础设置
+  .base-setting {
+
+    .goods-name {
+
+      .goods-nameInput {
+        display: inline-block;
+        input{
+          padding-right: 50px;
+        }
+      }
+
+      //微商城商品名称样式
+      .mall-good {
+        position: relative;
+        vertical-align: top;
+
+        input {
+          padding-left: 35px;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: 5px;
+          left: 10px;
+          width: 20px;
+          height: 20px;
+          background: url(@icon-imgUrl) -299px -15px;
+        }
+      }
+
+      .clear-name {
+        position: absolute;
+        top: 7px;
+        left: 265px;
+        width: 16px;
+        height: 16px;
+        background: url(@icon-imgUrl) -107px -15px;
+        cursor: pointer;
+
+        &:hover {
+          background: url(@icon-imgUrl) -153px -15px;
+        }
+      }
+
+      button.sel-goodBtn {
+        float: right;
+        margin-right: 81px;
+        width: 100px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        vertical-align: top @ie-hack;
+        background-color: @color-orange-deep;
+      }
+    }
+
+    .date-placeholder {
+      display: inline-block;
+      height: 30px;
+      line-height: 30px;
+      vertical-align: top;
+    }
+
+    //选择微商城商品dialog
+    .dialog-title {
+      padding-left: 20px;
+      border-bottom: 1px solid #ccc;
+      background-color: #f8f8f8;
+      border-top-left-radius: 5px;
+      border-top-right-radius: 5px;
+
+      .prompt {
+        height: 40px;
+        line-height: 40px;
+        font-size: 14px;
+        color: #1a1a1a;
+
+        span {
+          color: #999;
+        }
+      }
+
+      .dialog-close {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 25px;
+        text-align: center;
+        color: #999;
+        cursor: pointer;
+      }
+    }
+
+    .dialog-content {
+      padding: 20px 10px 20px 20px;
+
+      .screen {
+        padding-right: 10px;
+
+        .category-selecte {
+          width: 150px;
+        }
+      }
+
+      //搜索框
+      .search {
+        width: 200px;
+        height: 32px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 0 10px;
+        input {
+          width: 150px;
+          height: 100%;
+          border: none;
+        }
+
+        .search-btn {
+          width: 20px;
+          height: 20px;
+          margin-top: 5px;
+          background: url(@icon-imgUrl) -199px -15px;
+          cursor: pointer;
+        }
+      }
+
+      //商品选择
+      .goods-content-header,
+      .goods-item-content {
+        li {
+          float: left;
+          text-align: center;
+        }
+      }
+
+      .goods-content-header {
+        margin-bottom: 10px;
+        li {
+          height: 40px;
+          background-color: #f7f7f7;
+        }
+      }
+
+      //微商城无数据时样式
+      .no-goods {
+        width: 100%;
+        height: 400px;
+        padding-top: 90px;
+
+        .no-goods-inner {
+          font-size: 14px;
+          line-height: 20px;
+          color: #999;
+          text-align: center;
+
+          .no-goods-icon {
+            display: inline-block;
+            width: 80px;
+            height: 40px;
+            background: url(@icon-imgUrl) -543px -15px;
+          }
+
+          .no-goods-tips {
+            margin: 20px 0 30px 0;
+          }
+        }
+      }
+
+      //微商城有数据样式
+      .googs-content-list {
+        position: relative;
+        height: 400px;
+        overflow-y: hidden;
+        padding-right: 10px;
+
+        //滚动条样式
+        .scroll-wrap,
+        .scroll-inner {
+          position: absolute;
+          right: 0;
+          top: 0;
+          width: 6px;
+          height: 100%;
+          border-radius: 8px;
+        }
+
+        .scroll-wrap {
+          background-color: #D8D8D8;
+          z-index: 10;
+
+          .scroll-inner {
+            background-color: #999999;
+          }
+        }
+
+        //商品列表wrap
+        .content-list-inner {
+          position: absolute;
+          top: 0;
+          left: 0;
+        }
+
+        //商品名称位置
+        .googs-name {
+          text-align: left;
+          padding-left: 15px;
+        }
+
+        //商品单个item
+        .goods-item {
+          padding: 10px 0;
+          border: 1px solid #ccc;
+          margin-bottom: 10px;
+          border-radius: 3px;
+        }
+
+        //单个item内容
+        .goods-item-content {
+
+          .goods-img {
+            display: inline-block;
+            width: 40px;
+            height: 40px;
+            border-radius: 3px;
+            background-color: #A4D74A;
+            vertical-align: bottom;
+
+            img {
+              width: 100%;
+              height: 100%;
+            }
+          }
+
+          .goods-text {
+            display: inline-block;
+            max-width: 140px;
+            height: 40px;
+            line-height: 40px;
+            vertical-align: bottom;
+          }
+        }
+
+        //分页
+        .page {
+          text-align: right;
+          margin-bottom: 35px;
+        }
+      }
+      //选择微商城商品单元格宽度
+      .googs-name {
+        width: 230px;
+      }
+      .goods-price {
+        width: 90px;
+      }
+      .goods-sales {
+        width: 70px;
+      }
+      .goods-stock {
+        width: 68px;
+      }
+      .goods-time {
+        width: 150px;
+      }
+
+      //dialog底部
+      .dialog-footer {
+        margin: 15px 10px 0 0;
+        text-align: right;
+
+        //错误提示样式
+        .mall-error-msg {
+          display: inline-block;
+          height: 30px;
+          line-height: 30px;
+          color: #ff0000;
+          margin-right: 20px;
+        }
+
+        button {
+          width: 80px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 12px;
+          text-align: center;
+
+          &.dialog-cancel {
+            background-color: @color-orange-deep;
+            color: #fff;
+            margin-right: 10px;
+          }
+
+          &.dialog-sure {
+            color: #999;
+            background-color: #f7f7f7;
+            border: 1px solid #ccc;
+          }
+        }
+      }
+    }
+
+    //活动时间
+    .act-date {
+
+      .el-form-item {
+        display: inline-block;
+      }
+    }
+    //砍价轮播图
+    .banner-wrap {
+      margin-top: 6px;
+    }
+    //上传轮播图片
+    .banner-list {
+
+      li {
+        position: relative;
+        float: left;
+        width: 90px;
+        height: 48px;
+        margin-right: 20px;
+        cursor: move;
+
+        img {
+          width: 100%;
+          height: 100%;
+        }
+
+        .close-banner {
+          visibility: hidden;
+          position: absolute;
+          right: -7px;
+          top: -8px;
+          width: 16px;
+          height: 16px;
+          background: url(@icon-imgUrl) -107px -15px;
+          cursor: pointer;
+
+          &:hover {
+            background: url(@icon-imgUrl) -153px -15px;
+          }
+        }
+
+        &:hover {
+
+          .close-banner {
+            visibility: visible;
+          }
+        }
+
+      }
+    }
+  }
+
+  //活动设置
+  .act-setting {
+
+    //提示
+    .tips {
+      position: relative;
+      display: inline-block;
+      height: 32px;
+      line-height: 32px;
+      vertical-align: top;
+      color: #ccc;
+
+      .icon {
+        display: inline-block;
+        width: 16px;
+        height: 16px;
+        margin: 0 5px;
+        border-radius: 50%;
+        background: #999 url(@icon-imgUrl) -61px -15px;
+        vertical-align: middle;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #4C4C4C;
+
+          .question-content {
+            display: block;
+            opacity: 1;
+          }
+        }
+      }
+
+      .question-content {
+        display: none;
+        opacity: 0;
+        position: absolute;
+        top: 38px;
+        left: 4px;
+        width: 330px;
+        color: #fff;
+        font-size: 14px;
+        line-height: 20px;
+        padding: 10px;
+        background-color: rgba(0, 0, 0, 0.7);
+        border-radius: 5px;
+        z-index: 100;
+        transition: all 500ms;
+        -moz-transition: all 500ms;
+        -webkit-transition: all 500ms;
+        -o-transition: all 500ms;
+
+        &:after {
+          content: "";
+          position: absolute;
+          top: -10px;
+          top: -9px @ie-hack;
+          left: 20px;
+          border-left: 10px solid transparent;
+          border-right: 10px solid transparent;
+          border-bottom: 10px solid rgba(0, 0, 0, 0.7);
+        }
+      }
+    }
+
+    .text-small {
+      font-size: 12px;
+      line-height: 1.5;
+      color: #999;
+    }
+
+    //砍价目标label提示
+    .floor-price {
+
+      .label {
+        float: left;
+        width: 100px;
+        text-align: left;
+        font-size: 14px;
+        line-height: 20px;
+        color: #666;
+        vertical-align: middle;
+        margin-left: -100px;
+      }
+
+    }
+
+    //砍价设置
+    .setting-price {
+      width: 400px;
+      border: 1px solid #ccc;
+      margin: 5px 0 10px 0;
+
+      .price-title {
+        width: 100%;
+        font-size: 14px;
+        line-height: 30px;
+        padding: 0 10px;
+        background-color: #F7F7F7;
+        border-bottom: 1px solid #ccc;
+
+        .text-small {
+          color: #666;
+        }
+      }
+
+      .price-content {
+        padding: 10px;
+
+        .chance,
+        .price-range {
+
+          span {
+
+            &:first-child {
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .chance {
+          margin-bottom: 8px;
+        }
+
+        input {
+          height: 30px;
+          padding: 3px 10px;
+          border: 1px solid #ccc;
+
+          &:hover {
+            border-color: @color-orange-deep;
+          }
+        }
+      }
+    }
+
+    .bargain-time {
+      position: relative;
+      line-height: 20px;
+      color: #666;
+
+      .bargain-time-strong {
+        font-size: 16px;
+        color: @color-orange-deep;
+        vertical-align: bottom;
+      }
+    }
+
+    .info-writetime {
+      margin-bottom: 8px;
+    }
+
+    .error-msg {
+      top: inherit;
+    }
+
+  }
+
+  //高级设置
+  .advSetting {
+
+    .act-images {
+      width: 144px;
+      height: 80px;
+      margin-right: 10px;
+
+      img {
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+      }
+    }
+
+    .error-msg {
+      left: 0;
+    }
+
+    .input-num {
+      right: 190px;
+    }
+
+    .description {
+      position: relative;
+
+      textarea {
+        height: 75px;
+        overflow: hidden;
+      }
+
+      .input-num {
+        top: 55px;
+      }
+    }
+
+    .el-input__inner {
+      padding-right: 50px;
+    }
+
+  }
+  //分享设置
+  .setting-share {
+    width: 380px;
+    height: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #f7f7f7;
+
+    .share-label {
+      width: 65px;
+      padding: 6px 0;
+    }
+
+    .el-form-item__error {
+      margin-left: 65px;
+    }
+
+    .upload-banner,
+    .share-img-tips {
+      margin-left: 10px;
+    }
+
+    .upload-banner {
+      margin-top: 4px;
+    }
+
+    .share-img-tips {
+      margin-top: 3px;
+    }
+
+    .share-img {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .share-img-tips {
+      font-size: 12px;
+      line-height: 17px;
+      color: #999;
+    }
+
+    .el-form-item {
+      margin-bottom: 22px;
+    }
+
+    .share-title {
+
+      .input-num {
+        left: inherit;
+        right: 12px;
+      }
+    }
+
+    .share-content {
+
+      textarea {
+        height: 55px;
+        overflow: hidden;
+      }
+
+      .input-num {
+        left: inherit;
+        right: 12px;
+        top: 35px;
+      }
+    }
+
+    .error-msg {
+      top: 42px;
+      left: 62px;
+    }
+
+  }
+
+  //付费模式选择框
+  .select-traffic-model {
+    .el-form-item__label {
+      padding-top: 4px;
+    }
+
+    .el-checkbox {
+      .el-checkbox__inner {
+        width: 16px;
+        height: 16px;
+
+        &:after {
+          top: 0;
+          left: 4px;
+        }
+      }
+
+      .el-checkbox__label {
+        color: #666;
+      }
+    }
+
+    .tips {
+      margin-left: 21px;
+      color: #999;
+    }
+  }
+
+  //底部保存按钮
+  .footer-btn {
+    border-top: 1px solid #ccc;
+    text-align: center;
+    padding-top: 30px;
+
+    button {
+      width: 120px;
+      height: 40px;
+      line-height: 40px;
+      font-size: 14px;
+    }
+
+    .save {
+      margin-right: 20px;
+      color: #fff;
+      background-color: @color-orange-deep;
+    }
+
+    .cancel {
+      color: #ccc;
+      border: 1px solid #ccc;
+    }
+  }
+}
+
+.category-selection .el-select-dropdown__item.is-second {
+  padding-left: 20px;
+}
+
+.error-border {
+  border-color: red !important;
+  input {
+    border-color: red;
+  }
+}
